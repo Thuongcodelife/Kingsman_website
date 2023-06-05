@@ -29,3 +29,8 @@ Participants | Name | Student_ID | Task |
 <p>Phone: 0342888525</p>
 <p>Content is for educational purposes only</p>
 
+# MORE DETAILS ABOUT WEBSITE
+<p>Home page</p>
+![alt text](../img_detail_git/homepage.png)
+
+
