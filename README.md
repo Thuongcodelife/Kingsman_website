@@ -66,4 +66,4 @@ Participants | Name | Student_ID | Task |
 
 **3. Login**
 
-![alt text](./img_detail_git/admin.png)
+![alt text](./img_detail_git/login_admin.png)
