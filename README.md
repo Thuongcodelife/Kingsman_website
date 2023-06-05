@@ -23,6 +23,16 @@ Participants | Name | Student_ID | Task |
   - PHP
 * Database: 
   - MySQL
+>How to run our project?
+1. Download Our code.
+2. Download Xampp.
+3. Put the source code in the htdocs of the Xampp folder.
+3. Run Xampp start Apache and MySQL.
+4. Past "http://localhost/phpmyadmin/" in URL google.
+5. Create database with name "fashion" in localhost phpmyadmin.
+6. Ater that import database with data file in folder database.
+7. Run code following links URL. <pre> http://localhost/Website_Kingsman/admin/admin.php </pre>
+8. Good Luck!
 
 >Contact US
 <p>Gmail: 20522000@gm.uit.edu.vn</p>
