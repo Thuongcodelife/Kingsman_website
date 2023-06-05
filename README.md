@@ -30,7 +30,40 @@ Participants | Name | Student_ID | Task |
 <p>Content is for educational purposes only</p>
 
 # MORE DETAILS ABOUT WEBSITE
-<p>Home page</p>
-![alt text](../img_detail_git/homepage.png)
+**1. Home Page Website**
 
+![alt text](./img_detail_git/homepage.png)
 
+**2. Detail Product**
+
+![alt text](./img_detail_git/details_product.png)
+
+**3. Cart**
+
+![alt text](./img_detail_git/cart.png)
+
+**4. Bill Information**
+
+![alt text](./img_detail_git/infor_bill.png)
+
+**5. Print Invoice**
+
+![alt text](./img_detail_git/invoice.png)
+
+**6. Login**
+
+![alt text](./img_detail_git/login_website.png)
+
+# MORE DETAILS ABOUT ADMIN
+
+**1. Homepage**
+
+![alt text](./img_detail_git/admin.png)
+
+**2. Insert Data**
+
+![alt text](./img_detail_git/insert_data.png)
+
+**3. Login**
+
+![alt text](./img_detail_git/admin.png)
