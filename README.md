@@ -31,7 +31,7 @@ Participants | Name | Student_ID | Task |
 4. Past "http://localhost/phpmyadmin/" in URL google.
 5. Create database with name "fashion" in localhost phpmyadmin.
 6. Ater that import database with data file in folder database.
-7. Run code following links URL. <pre> http://localhost/Website_Kingsman/admin/admin.php </pre>
+7. Run code following links URL Example "http://localhost/Website_Kingsman/admin/admin.php"
 8. Good Luck!
 
 >Contact US
