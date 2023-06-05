@@ -2,10 +2,10 @@
 
 Participants | Name | Student_ID | Task |
 --- | --- | --- | --- |
-**Leader** | **Nguyễn Nhất Thưởng** | **20522000**| *FE*, *BE*, *Midterm Report*|
-**Member** | **Lê Quang Hoà** | **20521331** | *FE*, *BE*, *Midterm Report*|
-**Member** | **Kiều Xuân Diệu Hương**  | **20521381** | *Figma*, *Midterm Report*|
-**Member** | **Nguyễn Bảo Lâm** | **20521515** | *Figma*, *Midterm Report*| 
+**Leader** | **Nguyễn Nhất Thưởng** | **20522000**| *Leader*, *FE*, *BE*|
+**Member** | **Lê Quang Hoà** | **20521331** | *FE*, *BE*|
+**Member** | **Kiều Xuân Diệu Hương**  | **20521381** | *Figma*, *UI/UX*|
+**Member** | **Nguyễn Bảo Lâm** | **20521515** | *Figma*| 
  
  
 > Task management table: [here](https://trello.com/invite/b/1JxH6dTT/ATTIe34f268745834a8f77f264f9fd1db14fE4D60B1C/system-management-design)
