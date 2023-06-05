@@ -34,7 +34,7 @@ Participants | Name | Student_ID | Task |
 
 ![alt text](./img_detail_git/homepage.png)
 
-**2. Detail Product**
+<!-- **2. Detail Product**
 
 ![alt text](./img_detail_git/details_product.png)
 
@@ -52,7 +52,7 @@ Participants | Name | Student_ID | Task |
 
 **6. Login**
 
-![alt text](./img_detail_git/login_website.png)
+![alt text](./img_detail_git/login_website.png) -->
 
 # MORE DETAILS ABOUT ADMIN
 
@@ -60,10 +60,10 @@ Participants | Name | Student_ID | Task |
 
 ![alt text](./img_detail_git/admin.png)
 
-**2. Insert Data**
+<!-- **2. Insert Data**
 
 ![alt text](./img_detail_git/insert_data.png)
 
 **3. Login**
 
-![alt text](./img_detail_git/login_admin.png)
+![alt text](./img_detail_git/login_admin.png) -->
