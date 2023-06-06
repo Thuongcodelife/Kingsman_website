@@ -22,17 +22,17 @@
                         </div>
                         <form action="index.php?act=insert_client_user" method="POST"class="singin-form">
                             <div class="form-group">
-                                <label>Last Name</label>
+                                <label>Last Name<span class="redline";> *</span></label>
                                 <input placeholder="Last name" type="text" class="form-control" name="last_name_c">
                             </div>
                             <!-- 3 -->
                             <div class="form-group">
-                                <label>First name</label>
+                                <label>First name<span class="redline";> *</span></label>
                                 <input placeholder="First name" type="text" class="form-control" name="first_name_c">
                             </div>
                             <!-- 4 -->
                             <div class="form-group">
-                                <label>Sex</label>
+                                <label>Sex<span class="redline";> *</span></label>
                                 <select style="height: 50px;" name="sex_c" id="">
                                     <option value="0">Choose Sex</option>
                                     <option value="1">Male</option>
@@ -42,33 +42,35 @@
                             </div>
                             <!-- 5 -->
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>Email<span class="redline";> *</span></label>
                                 <input placeholder="Please enter your email"  type="email" class="form-control" name="email_c">
                             </div>
                             <!-- 6 -->
                             <div class="form-group">
-                                <label>Phone</label>
+                                <label>Phone<span class="redline";> *</span></label>
                                 <input placeholder="Please enter your phone" type="text" class="form-control" name="phone_c">
                             </div>
                             <!-- 7 -->
                             <div class="form-group">
-                                <label>User Name</label>
+                                <label>User Name<span class="redline";> *</span></label>
                                 <input placeholder="Username" type="text" class="form-control" name="user_c">
                             </div>
                             <!-- 8 -->
                             <div class="form-group">
-                                <label>Password</label>
+                                <label>Password<span class="redline";> *</span></label>
                                 <input placeholder="Password" type="password" class="form-control" name="password_c">
                             </div>
+                            <?php
+                                if(isset($txt_erro))
+                                {
+                                    echo "<font color='red'>".$txt_erro."</font>";
+                                }
+                            ?>
+                            <br><br>
                             <div class="form-group">
                                 <input type="submit" class="form-control" name="submit">
                             </div>
-                            <?php
-                                if(isset($txt_erro)&&($txt_erro!=""))
-                                {
-                                echo "<font color='red'>".$txt_erro."</font>";
-                                }
-                            ?>
+
                         </form> 
                     </div>
             </div>

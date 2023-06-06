@@ -21,6 +21,7 @@
                     <!-- <th>Email</th> -->
                     <th>Address</th>
                     <th>Total Prices</th>
+                    <th>Payment</th>
                     <th>Status</th>
                     <th>Order_Day</th>
                     <th>Function</th>
@@ -43,6 +44,13 @@
                           <td>'.$invoice['address'].'</td>
                           <td>'.number_format($invoice['total_prices']).'</td>
                         ';
+                        if($invoice['payment'] ==1)
+                        {
+                          echo '<td>Cash on delivery</td>';
+                        } else{
+                          echo '<td>Momo</td>';
+                        } 
+
                         if($invoice['status'] =="Pending")
                         {
                           echo '<td class="status-pending">'.$invoice['status'].'</td>';

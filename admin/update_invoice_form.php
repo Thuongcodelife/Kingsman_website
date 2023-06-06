@@ -12,9 +12,10 @@
               <?php
               // echo var_dump($result);
               ?>
+              <label>Invoice Code<span style="color: red"> *</span></label>
+              <input type="text" name="id_invoice" value="<?=$result[0]['invoice_id']?>" placeholder="Name of Product" readonly>
               <form action="admin.php?act=updateform_invoice" method="POST" enctype="multipart/form-data">
-                    <label>Invoice Code</label>
-                    <input type="text" name="id_invoice" value="<?=$result[0]['invoice_id']?>" placeholder="Name of Product">
+                    <label>Status<span style="color: red"> *</span></label>
                     <select name="status" id="">
                       <option value="Pending">Choose Status</option>
                       <?php
@@ -38,6 +39,7 @@
                         } 
                       ?>
                     </select>
+                    <label>Employee Entry <span style="color: red"> *</span></label>
                     <select name="idee" id="">
                       <option value=0 selected>Choose Employee Entry</option>
                       <?php

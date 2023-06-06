@@ -272,45 +272,60 @@
               }
             // insert account client user
             case 'insert_client_user':
-            {
-              if(isset($_GET['id']))
               {
-                header('location: register.php');
+                  if (isset($_GET['id'])) {
+                      header('location: register.php');
+                      break;
+                  }
+                  
+                  if (isset($_POST['submit']) && $_POST['submit']) {
+                      if (isset($_POST['user_c'])) {
+                          $lname = $_POST['last_name_c'];
+                          $fname = $_POST['first_name_c'];
+                          $sex = $_POST['sex_c'];
+                          $email = $_POST['email_c'];
+                          $phone = $_POST['phone_c'];
+                          $userr = $_POST["user_c"];
+                          $password = $_POST['password_c'];
+                          
+                          $check = 0; // flag check null
+                          
+                          if ($lname == "" || $fname == "" || $sex == "" || $email == "" || $phone == "" || $userr == "" || $password == "") {
+                              $check = 1;
+                          }
+                          
+                          $account = getall_client_user();
+                          
+                          foreach ($account as $us) {
+                              if ($us["user"] == $userr) {
+                                  $txt_erro = "User exists, please enter another user!";
+                                  include('register.php');
+                                  $check = 2;
+                                  break;
+                              }
+                          }
+                          
+                          if ($check == 2) {
+                              break;
+                          }
+                          
+                          if ($check == 1) {
+                              $txt_erro = "Missing information!";
+                              include('register.php');
+                              break;
+                          } else {
+                              insert_client_user($lname, $fname, $sex, $email, $phone, $userr, $password);
+                              echo '<script type="text/javascript">';
+                              echo "alert('Insert Client successed!');";
+                              echo '</script>';
+                              header('location: index.php?act=login');
+                              break;
+                          }
+                      }
+                  }
+                  break;
               }
-              if(isset($_POST['submit'])&&$_POST['submit'])
-              {  
-                if(isset($_POST['user_c'])){
-                  // information insert
-                  $lname=$_POST['last_name_c'];
-                  $fname=$_POST['first_name_c'];
-                  $sex=$_POST['sex_c'];
-                  $email=$_POST['email_c'];
-                  $phone=$_POST['phone_c'];
-                  $user=$_POST["user_c"];
-                  $password=$_POST['password_c'];
-                  //flag check null          
-                  $check = false;
-                  if($lname==""||$fname==""||$sex==""||$email==""||$phone==""||$user==""||$password=="")
-                  {
-                      $check=true;
-                  }
-                  if($check){
-                    $txt_erro="Username or Password wrong or account dosen't exist!";
-                    header('location: register.php');
-                    break;
-                  }
-                  else{   
-                    insert_client_user($lname,$fname,$sex,$email,$phone,$user,$password);
-                    echo '<script type="text/javascript">';
-                    echo "alert('Insert Client sucessed!');";
-                    echo '</script>';
-                    header('location: index.php?act=login');
-                    break;
-                  }
-                }
-              }
-              break;
-            }
+              
             default:
             {
               include 'body.php';
