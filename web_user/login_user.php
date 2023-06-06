@@ -35,6 +35,14 @@
                         <label>Password</label>
                         <input placeholder=".................." type="password" class="form-control" name="password">
                     </div>
+                    <?php
+                        if (isset($_GET['error']) && $_GET['error'] === '1') {
+                            echo '<font color="red">Username, Password wrong or account doesn\'t exist!</font><br><br>';
+                            
+                        }
+                        
+                    ?>
+
                     <input class="ui blue button" type="submit" name="user_check" value="Login">
                 </form>
             </div>

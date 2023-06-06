@@ -53,8 +53,9 @@
                 // var_dump($kq);
                 // echo $kq;
                 if($kq==0)
-                {
-                  header('location: login_user.php');
+                {                  
+                  header('location: login_user.php?error=1');
+                  exit();
                 } else {
                   $_SESSION['username']=$kq[0]['user'];
                   $_SESSION['iduser']=$kq[0]['id'];

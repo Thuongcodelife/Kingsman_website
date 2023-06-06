@@ -23,6 +23,7 @@
                     <th>Total Prices</th>
                     <th>Payment</th>
                     <th>Status</th>
+                    <th>Staff</th>
                     <th>Order_Day</th>
                     <th>Function</th>
                     <!-- <th>E-mail</th> -->
@@ -59,8 +60,23 @@
                         } elseif ($invoice['status'] == "Ordered"){
                           echo '<td class="status-ordered">'.$invoice['status'].'</td>';
                         };
+                        foreach($user as $us)
+                        {
+                          if($us['id']==$invoice['employee_pr'])
+                          {
+                            echo '<td>'.$us['name_us'].'</td>';
+                            $check_us = 1;
+                          }
+                        }
+                        if($check_us == 0)
+                        {
+                          echo '<td> </td>';
+                        }
                         echo '
-                          <td>'.$invoice['due_date'].'</td>
+                          <td>'.$invoice['due_date'].'</td>';
+                        $check_us = 0;
+
+                        echo'
                           <td>
                             <button  class="button-update"><a class="change-a" href="admin.php?act=updateform_invoice&id='.$invoice['id'].'">Update</a></button>
                             <button  class="button-print"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Print</a></button>

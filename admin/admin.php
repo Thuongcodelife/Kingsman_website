@@ -265,6 +265,7 @@
           // invoice
           case 'invoice':
           {
+            $user = getall_user();
             $kq = getall_invoice();
             include("invoice.php");
             break;
