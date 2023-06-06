@@ -45,6 +45,11 @@
                                 <label>Email<span class="redline";> *</span></label>
                                 <input placeholder="Please enter your email"  type="email" class="form-control" name="email_c">
                             </div>
+                            <!-- ee -->
+                            <div class="form-group">
+                                <label>Address<span class="redline";> *</span></label>
+                                <input placeholder="Please enter your address"  type="text" class="form-control" name="address_c">
+                            </div>
                             <!-- 6 -->
                             <div class="form-group">
                                 <label>Phone<span class="redline";> *</span></label>

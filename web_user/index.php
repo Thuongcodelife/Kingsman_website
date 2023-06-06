@@ -25,6 +25,11 @@
               header('location: login_user.php');
               break;
             }
+            case 'login_sc':
+              {
+                header('location: login_user.php?success=1');
+                break;
+              }
             // logout
             case 'logout':
             {
@@ -288,10 +293,11 @@
                           $phone = $_POST['phone_c'];
                           $userr = $_POST["user_c"];
                           $password = $_POST['password_c'];
-                          
+                          $address = $_POST['address_c'];
+
                           $check = 0; // flag check null
                           
-                          if ($lname == "" || $fname == "" || $sex == "" || $email == "" || $phone == "" || $userr == "" || $password == "") {
+                          if ($lname == "" || $fname == "" || $sex == "" || $email == "" || $phone == "" || $userr == "" || $password == "" || $address == "") {
                               $check = 1;
                           }
                           
@@ -315,11 +321,8 @@
                               include('register.php');
                               break;
                           } else {
-                              insert_client_user($lname, $fname, $sex, $email, $phone, $userr, $password);
-                              echo '<script type="text/javascript">';
-                              echo "alert('Insert Client successed!');";
-                              echo '</script>';
-                              header('location: index.php?act=login');
+                              insert_client_user($lname, $fname, $sex, $email, $phone, $userr, $password, $address);
+                              header('location: index.php?act=login_sc');
                               break;
                           }
                       }

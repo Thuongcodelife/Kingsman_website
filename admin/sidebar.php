@@ -45,7 +45,7 @@
       <div class="item">
         <img src="images/user.png" id="sidebar-image">
       </div>
-      <a class="item" href="admin.php?act=client"><i class="home icon"></i> Dashboard</a>
+      <a class="item" href="admin.php?act=statistic"><i class="home icon"></i> Dashboard</a>
       <!-- <a class="item" href="table.html"><i class="table icon"></i> Table</a> -->
       <!-- Function -->
       <div class=" ui accordion simpleaccordion item">

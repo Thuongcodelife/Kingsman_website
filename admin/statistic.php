@@ -8,15 +8,15 @@
           <div class="sixteen wide computer sixteen wide phone centered column">
             <!-- BEGIN DATATABLE -->
             <div class="ui stacked segment">
-              <div class="ui blue ribbon icon label">Supplier Information</div>
+              <div class="ui blue ribbon icon label">Detailed statistics</div>
               <br><br>
               <table id="example" class="ui celled table responsive nowrap unstackable" style="width:100%">
                 <thead>
                   <tr>
                     <th>Month</th>
                     <th>Invoice Quantity</th>
-                    <th>Profit</th>
                     <th>Product quantity</th>
+                    <th>Profit</th>
                     </th>
                   </tr>
                 </thead>
@@ -31,26 +31,44 @@
                         // var_dump($invoice_month);
                         foreach ($invoice_month as $invoice) {
                             // echo $invoice['id'];
-                            $invoice_cart = getall_cart_month($invoice['id']);
-                            // var_dump($invoice_cart);
-                            foreach($invoice_cart as $cart)
+                            if($invoice['status']!='Cancel' && $invoice['status']!='Pending')
                             {
-                                $slsp += $cart['quantity'];
+                              $invoice_cart = getall_cart_month($invoice['id']);
+                              foreach($invoice_cart as $cart)
+                              {
+                                  $slsp += $cart['quantity'];
+                              }
                             }
                         }
                         if ($total_invoice > 0) {
-                            $total_invoice = $total_invoice;
                         } else {
                             $total_invoice = 0;
                         }
-                        echo '
-                            <tr>
-                                <td>' . $i . '</td>
-                                <td>' . $total_invoice . '</td>
-                                <td>' . number_format($total_profit) . '</td>
-                                <td>' . number_format($slsp) . '</td>
-                            </tr>
-                        ';
+                        // <td>' . $total_invoice . '</td>
+                        // <td>' . number_format($total_profit) . '</td>
+                        // <td>' . number_format($slsp) . '</td>
+                        echo '<tr>';
+                        echo'<td>' . $i . '</td>';
+                        
+                        if($total_invoice==0)
+                        {
+                          echo'<td> - </td>';
+                        } else {
+                          echo'<td>' . $total_invoice . '</td>';
+                        }
+                        if($slsp==0)
+                        {
+                          echo'<td> - </td>';
+                        } else {
+                          echo'<td>' . $slsp . '</td>';
+                        }
+                        if($total_profit==0)
+                        {
+                          echo'<td> - </td>';
+                        } else {
+                          echo'<td>' . number_format($total_profit) . '</td>';
+                        }
+                        echo'</tr>';
                         $i++;
                     }                    
                 ?>

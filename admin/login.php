@@ -13,7 +13,7 @@
         // var_dump($role);
         if($role==1)
         {
-            header('location: admin.php?act=client');
+            header('location: admin.php?act=statistic');
         }
         else 
         {

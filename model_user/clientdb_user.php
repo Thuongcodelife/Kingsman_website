@@ -8,10 +8,10 @@ function getall_client_user(){
     return $kq;
 }
 
-function insert_client_user($lname,$fname,$sex,$email,$phone,$user,$password){
+function insert_client_user($lname,$fname,$sex,$email,$phone,$user,$password, $address){
     $conn=connectdb();
-    $sql = "INSERT INTO tbl_client(fname,lname,sex,email,phone,user,password)
-    VALUES ('$fname','$lname','$sex','$email','$phone','$user','$password')";
+    $sql = "INSERT INTO tbl_client(fname,lname,sex,email,phone,user,password,address)
+    VALUES ('$fname','$lname','$sex','$email','$phone','$user','$password','$address')";
     $conn->exec($sql);
   }
 

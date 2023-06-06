@@ -50,3 +50,8 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
+    if (window.location.search.includes('success=1')) {
+        alert('Insert Client successed!');
+    }
+</script>

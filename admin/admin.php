@@ -566,7 +566,7 @@
                       $user = getall_user();
                       include ("invoice.php");
                       echo '<script type="text/javascript">';
-                      echo "alert('Update Client Successed!');";
+                      echo "alert('Update invoice Successed!');";
                       echo '</script>';
                     }else{
                       $user = getall_user();
