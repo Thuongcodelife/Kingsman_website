@@ -268,7 +268,7 @@
       </div>
   <div class="button-wrapper">
     <ion-icon name="print-outline" class="invoice-print"></ion-icon>
-    <button class="custom-button"><a href="index.php" class="axil-btn btn-bg-primary checkout-btn">Home Page</a></button>
+    <button class="custom-button"><a href="../admin/admin.php?act=invoice" class="axil-btn btn-bg-primary checkout-btn">Home Page</a></button>
 </div>
 </main>
 

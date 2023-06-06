@@ -114,7 +114,7 @@
                                                                         </tbody>
                                                                     </table>
                                                                 </div>
-                                                                <input value="Print Invoice" type="submit" name="submit"  class="axil-btn btn-bg-primary checkout-btn"></input>
+                                                                <input value="Finished" type="submit" name="submit"  class="axil-btn btn-bg-primary checkout-btn"></input>
                                                             </div>
                                                         </div>
                                                     ';

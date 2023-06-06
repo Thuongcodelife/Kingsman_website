@@ -13,16 +13,16 @@
                 <thead>
                   <tr>
                     <th>Number</th>
-                    <th>ID_invoice</th>
+                    <th>ID</th>
                     <!-- <th>ID Invoice</th> -->
                     <th>User_ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
                     <th>Phone</th>
-                    <th>Email</th>
+                    <!-- <th>Email</th> -->
                     <th>Address</th>
                     <th>Total Prices</th>
-                    <th>Due_Day</th>
+                    <th>Status</th>
+                    <th>Order_Day</th>
                     <th>Function</th>
                     <!-- <th>E-mail</th> -->
                   </tr>
@@ -31,31 +31,41 @@
                   // var_dump($dmsp);
                   if (isset($kq) && (count($kq) > 0)) {
                     $i = 1;
+                    // var_dump($kq);
                     foreach ($kq as $invoice) {
                       echo '
                         <tr>
                           <td>'.$i.'</td>
                           <td>'.$invoice['id'].'</td>
                           <td>'.$invoice['id_user'].'</td>
-                          <td>'.$invoice['fname'].'</td>
-                          <td>'.$invoice['lname'].'</td>
+                          <td>'.$invoice['fname']. ' ' .$invoice['lname'].'</td>
                           <td>'.$invoice['phone'].'</td>
-                          <td>'.$invoice['email'].'</td>
                           <td>'.$invoice['address'].'</td>
                           <td>'.number_format($invoice['total_prices']).'</td>
+                        ';
+                        if($invoice['status'] =="Pending")
+                        {
+                          echo '<td class="status-pending">'.$invoice['status'].'</td>';
+                        } elseif ($invoice['status'] == "Cancel"){
+                          echo '<td class="status-cancel">'.$invoice['status'].'</td>';
+                        } elseif ($invoice['status'] == "Ordered"){
+                          echo '<td class="status-ordered">'.$invoice['status'].'</td>';
+                        };
+                        echo '
                           <td>'.$invoice['due_date'].'</td>
                           <td>
-                            <button  class="button-update"><a class="change-a" href="../web_user/index.php?act=check_out_update&iddh='.$invoice['id'].'">View</a></button>
+                            <button  class="button-update"><a class="change-a" href="admin.php?act=updateform_invoice&id='.$invoice['id'].'">Update</a></button>
+                            <button  class="button-print"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Print</a></button>
+                            <button  class="button-detail"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Details</a></button>  
                           </td>
                         </tr>';
                       $i++;
                     }
                   }
                 ?>
-
               </table>
               <div>
-                  <button  class="button-insert"><a class="change-a" href="admin.php?act=insert_client&id='1'">Insert</a></button>
+                  <!-- <button  class="button-insert"><a class="change-a" href="admin.php?act=insert_client&id='1'">Insert</a></button> -->
               </div>
             </div>
             <!-- END DATATABLE -->

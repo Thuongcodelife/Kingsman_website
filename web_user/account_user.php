@@ -89,9 +89,20 @@
                                                                     <tr>
                                                                         <th scope="row">'.$od['invoice_id'].'</th>
                                                                         <td>'.$od['due_date'].'</td>
-                                                                        <td>Done</td>
+                                                                ';
+                                                                
+                                                                if($od['status'] =="Pending")
+                                                                {
+                                                                  echo '<td style="color: grey; font-weight: bold;">'.$od['status'].'</td>';
+                                                                } elseif ($od['status'] == "Cancel"){
+                                                                  echo '<td style="color: red; font-weight: bold;">'.$od['status'].'</td>';
+                                                                } elseif ($od['status'] == "Ordered"){
+                                                                  echo '<td style="color: green; font-weight: bold;">'.$od['status'].'</td>';
+                                                                }
+                                    
+                                                                echo'
                                                                         <td>'.number_format($od['total_prices']).'</td>
-                                                                        <td><a href="index.php?act=check_out_update&iddh='.$od['id'].'" class="axil-btn view-btn">View</a></td>
+                                                                        <td><a href="index.php?act=print_invoice&iddh='.$od['id'].'" class="axil-btn view-btn">Print Invoice</a></td>
                                                                     </tr>
                                                                 ';
                                                             }

@@ -544,6 +544,38 @@
                   }
                   break;
                 }
+                 case 'updateform_invoice':
+                {
+                  if(isset($_GET['id']))
+                  {
+                    $id=$_GET['id'];
+                    $dmee = getall_user();
+                    $result = getoneInvoice($id);
+                    include ("update_invoice_form.php");
+                  }
+                  if(!isset($_GET['id']))
+                  {
+                    if(isset($_POST['id']) && ($_POST['idee']!=0))
+                    {
+                      $id=$_POST['id'];
+                      $id_ee=$_POST['idee'];
+                      $status=$_POST['status'];
+                      update_invoice($id,$id_ee,$status);
+                      $kq = getall_invoice();
+                      include ("invoice.php");
+                      echo '<script type="text/javascript">';
+                      echo "alert('Update Client Successed!');";
+                      echo '</script>';
+                    }else{
+                      $kq = getall_invoice();
+                      include ("invoice.php");
+                      echo '<script type="text/javascript">';
+                      echo "alert('Update failure please enter employee process!');";
+                      echo '</script>';
+                    }
+                  }
+                  break;
+                }
           // product end
           default:{
             header('location: login.php');
@@ -551,9 +583,10 @@
           }
         }
       }
-  }
-  else 
-  {
-    header('location: login.php');
-  }
+    }
+    else 
+    {
+      header('location: login.php');
+
+    }
 ?>   

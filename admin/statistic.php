@@ -88,7 +88,7 @@
 <script src="vendors/pdfmake/vfs_fonts.js"></script>
 <!-- endinject -->
 
-<script>
+<!-- <script>
 $(document).ready(function() {
 
   $(document).ready(function() {
@@ -98,6 +98,6 @@ $(document).ready(function() {
     $('div.eight.column:eq(0)', table.table().container())
   );
 });
-</script>
+</script> -->
 
 </html>

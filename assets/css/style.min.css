@@ -16260,3 +16260,46 @@ body.open .closeMask {
   font-size: 5 0px;
   text-shadow: -1px -1px 0 rgb(226, 214, 43), 1px -1px 0 rgb(226, 214, 43), -1px 1px 0 rgb(226, 214, 43), 1px 1px 0 rgb(226, 214, 43);
 }
+
+.process {
+  background-image: url('../assets/images/logo/process.gif');
+  background-size: cover;
+}
+
+
+.main-wrapperr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.background-container {
+  position: relative;
+  height: 915px;
+  width: 1400px;
+}
+
+.background-image {
+  background-image: url('../assets/images/logo/process.gif');
+  background-size: cover;
+  background-position: center;
+  transform: scale(0.5);
+  height: 100%;
+  width: 100%;
+}
+
+.status-cancel{
+  color: red; 
+  font-weight: bold;
+}
+
+.status-pending{
+  color: grey; 
+  font-weight: bold;
+}
+
+.status-ordered{
+  color: green; 
+  font-weight: bold;
+}

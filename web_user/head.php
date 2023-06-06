@@ -14,7 +14,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="../assets/images/logo/logo5.png"
+      href="../assets/images/logo/logo.png"
     />
 
     <!-- CSS

@@ -51,7 +51,7 @@
                 $pass = $_POST['password'];
                 $kq = get_user($user,$pass);
                 // var_dump($kq);
-                echo $kq;
+                // echo $kq;
                 if($kq==0)
                 {
                   header('location: login_user.php');
@@ -196,12 +196,14 @@
                 {
                   unset($_SESSION['cart']);
                 }
-                header("location: invoice_print.php?id=".$iddh);
+                // header("location: invoice_print.php?id=".$iddh);
+                include("process_payment.php");
               }
               elseif(isset($_GET['iddh'])&&$_GET['iddh']!="")
               {
                 $iddh=$_GET['iddh'];
-                header("location: invoice_print.php?id=".$iddh);
+                // header("location: invoice_print.php?id=".$iddh);
+                include("process_payment.php");
               }
               break;
             }
@@ -248,6 +250,24 @@
                 }
                 include('cart.php');
                 // header('location: index.php');
+                break;
+              }
+            case 'print_invoice':
+            {
+              if(isset($_GET['iddh'])&&$_GET['iddh']!="")
+              {
+                $iddh=$_GET['iddh'];
+                header("location: invoice_print.php?id=".$iddh);
+              }
+              break;
+            }
+            case 'print_invoice_admin':
+              {
+                if(isset($_GET['iddh'])&&$_GET['iddh']!="")
+                {
+                  $iddh=$_GET['iddh'];
+                  header("location: invoice_print_admin.php?id=".$iddh);
+                }
                 break;
               }
             // insert account client user
@@ -300,7 +320,6 @@
     }
     else
     {
-      
       include 'body.php';
     }
     include 'footer.php';

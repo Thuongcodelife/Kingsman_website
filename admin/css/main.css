@@ -153,11 +153,14 @@ input[type=submit]:hover {
   border: none;
   color: white;
   padding: 4px 20px;
+  width: 100px;
+  height: 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   /* font-size: 16px; */
   border-radius: 4px;
+  margin: 5px;
 
 }
 .button-update:hover{
@@ -165,18 +168,60 @@ input[type=submit]:hover {
   background-color: #71e675;
 }
 
-
-.button-delete {
-  background-color: #f85656; /* red */
+.button-detail {
+  background-color: #f3cd6d; /* Green */
   border: none;
   color: white;
-  padding: 4px 22px;
+  padding: 4px 20px;
+  width: 100px;
+  height: 25px;
+  text-align: center;
+  text-decoration: none;  
+  display: inline-block;
+  /* font-size: 16px; */
+  border-radius: 4px;
+  margin: 5px;
+
+}
+.button-detail:hover{
+  color: white;
+  background-color: #f3cd6d;
+}
+
+.button-print {
+  background-color: #ee7ed2; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 20px;
+  width: 100px;
+  height: 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   /* font-size: 16px; */
   border-radius: 4px;
+  margin: 5px;
 
+}
+.button-print:hover{
+  color: white;
+  background-color: #ee7ed2;
+}
+
+
+.button-delete {
+  background-color: #f85656; /* red */
+  border: none;
+  color: white;
+  padding: 4px 20px;
+  width: 100px;
+  height: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  /* font-size: 16px; */
+  border-radius: 4px;
+  margin: 5px;
 }
 
 .button-delete:hover{
@@ -219,4 +264,19 @@ input[type=submit]:hover {
 
 input[type=file] {
   color: red;
+}
+
+.status-cancel{
+  color: red; 
+  font-weight: bold;
+}
+
+.status-pending{
+  color: grey; 
+  font-weight: bold;
+}
+
+.status-ordered{
+  color: green; 
+  font-weight: bold;
 }
