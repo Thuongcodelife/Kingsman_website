@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 07:04 PM
+-- Generation Time: Jun 06, 2023 at 09:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -43,28 +43,9 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`id`, `id_order`, `id_pro`, `quantity`, `prices`, `size`, `name_pro`, `img_pro`) VALUES
-(144, 88, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(145, 89, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(146, 90, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(147, 91, 74, 1, 30000000.00, 'M', 'White Shirt', 'shirt2.png'),
-(148, 92, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(149, 93, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(150, 94, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(151, 95, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(152, 96, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(153, 97, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(154, 98, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(155, 99, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(156, 100, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(157, 101, 76, 1, 34000000.00, 'XXL', 'Black Shirt', 'shirt1.png'),
-(158, 102, 73, 2, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(159, 103, 73, 2, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(160, 104, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(161, 105, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(162, 106, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(163, 107, 73, 1, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(164, 108, 74, 1, 30000000.00, 'M', 'White Shirt', 'shirt2.png'),
-(165, 108, 75, 1, 23000000.00, 'L', 'Blue Shirt', 'shirt3.png');
+(172, 115, 73, 2, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
+(173, 116, 74, 1, 30000000.00, 'M', 'White Shirt', 'shirt2.png'),
+(174, 117, 74, 1, 30000000.00, 'M', 'White Shirt', 'shirt2.png');
 
 -- --------------------------------------------------------
 
@@ -98,7 +79,7 @@ CREATE TABLE `tbl_client` (
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `sex` tinyint(1) NOT NULL,
-  `address` varchar(255) NOT NULL DEFAULT 'null',
+  `address` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phone` varchar(13) NOT NULL,
   `user` varchar(255) NOT NULL,
@@ -110,7 +91,12 @@ CREATE TABLE `tbl_client` (
 --
 
 INSERT INTO `tbl_client` (`id`, `fname`, `lname`, `sex`, `address`, `email`, `phone`, `user`, `password`) VALUES
-(29, 'Thuong', 'Nguyen', 1, 'null', '2002@gmail.com', '0342888525', 'nhatthuong', '123123');
+(32, 'Nguyen', 'Thuong', 2, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong1234', '123'),
+(33, 'Nguyen', 'Thuong', 1, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong12345', '123'),
+(34, 'Nguyen', 'Thuong', 1, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong123456', '123'),
+(35, 'Thưởng', 'Thuong', 2, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong1da', '123'),
+(36, 'Nguyen', 'Nguyen', 2, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong12341', '123'),
+(37, 'Nguyen', 'Thuong', 1, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCMM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong123412', '123');
 
 -- --------------------------------------------------------
 
@@ -151,12 +137,9 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `invoice_id`, `total_prices`, `payment`, `id_user`, `fname`, `lname`, `phone`, `email`, `address`, `notes`, `due_date`, `status`, `employee_pr`) VALUES
-(103, 'KINGSMAN931842', 75900000, 2, 25, 'Thuong', 'Nguyen', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-06', 'Cancel', 1),
-(104, 'KINGSMAN604861', 37950000, 2, 25, 'Thuong', 'Nguyen', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-06', 'Ordered', 1),
-(105, 'KINGSMAN70517', 37950000, 2, 25, 'Thuong', 'Nguyen', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', 'Not note', '2023-06-06', 'Ordered', 1),
-(106, 'KINGSMAN400057', 37950000, 2, 25, 'Thuong', 'Nguyen', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-06', 'Pending', 0),
-(107, 'KINGSMAN978737', 37950000, 2, 29, 'Thuong', 'Nguyen', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-06', 'Pending', 0),
-(108, 'KINGSMAN645650', 58300000, 1, 29, 'Thuong', 'Nguyen', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-06', 'Pending', 0);
+(115, 'KINGSMAN627650', 75900000, 2, 32, 'Nguyen', 'Thuong', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-07', 'Pending', 0),
+(116, 'KINGSMAN269995', 33000000, 2, 32, 'Nguyen', 'Thuong', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', 'Not note', '2023-06-07', 'Pending', 0),
+(117, 'KINGSMAN753860', 33000000, 2, 32, 'Nguyen', 'Thuong', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-07', 'Pending', 0);
 
 -- --------------------------------------------------------
 
@@ -186,8 +169,8 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id_product`, `product_name`, `quantity`, `product_img`, `product_prices`, `catalog_id`, `employee_entry`, `entry_date`, `sup_id`, `view`, `special`, `old_prices`, `description`, `size`) VALUES
-(73, 'Overside Shirt', 113, 'shirt4.png', 34500000, 79, 1, '2023-06-04', 14, 1, 1, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L'),
-(74, 'White Shirt', 98, 'shirt2.png', 30000000, 79, 1, '2023-06-04', 14, 1, 0, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'M'),
+(73, 'Overside Shirt', 105, 'shirt4.png', 34500000, 79, 1, '2023-06-04', 14, 1, 1, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L'),
+(74, 'White Shirt', 96, 'shirt2.png', 30000000, 79, 1, '2023-06-04', 14, 1, 0, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'M'),
 (75, 'Blue Shirt', 99, 'shirt3.png', 23000000, 79, 1, '2023-06-04', 14, 0, 0, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L'),
 (76, 'Black Shirt', 99, 'shirt1.png', 34000000, 79, 1, '2023-06-04', 14, 1, 1, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'XXL'),
 (77, 'Grey Suit', 98, 'suit (1).png', 34000000, 80, 1, '2023-06-04', 16, 1, 1, 500000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L'),
@@ -212,7 +195,7 @@ CREATE TABLE `tbl_supplier` (
 --
 
 INSERT INTO `tbl_supplier` (`sup_id`, `sup_name`, `sup_address`, `sup_bank`, `sup_tax_code`) VALUES
-(14, 'Gucci', 'US', 123123, 123123),
+(14, 'Viettien', 'US', 1231231, 123123),
 (16, 'Homes', 'US', 1231231, 123123);
 
 -- --------------------------------------------------------
@@ -304,19 +287,19 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT for table `tbl_catalog`
 --
 ALTER TABLE `tbl_catalog`
-  MODIFY `id_catalog_k` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_catalog_k` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `tbl_client`
 --
 ALTER TABLE `tbl_client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tbl_methodpayment`
@@ -328,19 +311,19 @@ ALTER TABLE `tbl_methodpayment`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id_product` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_product` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `tbl_supplier`
 --
 ALTER TABLE `tbl_supplier`
-  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
