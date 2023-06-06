@@ -24,7 +24,9 @@ Participants | Name | Student_ID | Task |
 * Database: 
   - MySQL
 >How to run our project?
-1. Download Our code.
+
+---------------------------------------------Start-----------------------------------------
+1. Open visual studio code -> open terminal -> run this command-> git clone https://github.com/Thuongcodelife/Kingsman_website.git (clone code)
 2. Download Xampp.
 3. Put the source code in the htdocs of the Xampp folder.
 3. Run Xampp start Apache and MySQL.
@@ -34,6 +36,8 @@ Participants | Name | Student_ID | Task |
 7. Run code following links URL Example "http://localhost/Website_Kingsman/admin/admin.php"
 8. Username: adminthuong Password: 123123
 8. Good Luck!
+---------------------------------------------End-----------------------------------------
+
 
 >Contact US
 <p>Gmail: 20522000@gm.uit.edu.vn</p>
