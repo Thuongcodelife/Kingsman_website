@@ -563,11 +563,13 @@
                       $status=$_POST['status'];
                       update_invoice($id,$id_ee,$status);
                       $kq = getall_invoice();
+                      $user = getall_user();
                       include ("invoice.php");
                       echo '<script type="text/javascript">';
                       echo "alert('Update Client Successed!');";
                       echo '</script>';
                     }else{
+                      $user = getall_user();
                       $kq = getall_invoice();
                       include ("invoice.php");
                       echo '<script type="text/javascript">';

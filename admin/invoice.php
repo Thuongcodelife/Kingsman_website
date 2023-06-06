@@ -60,6 +60,7 @@
                         } elseif ($invoice['status'] == "Ordered"){
                           echo '<td class="status-ordered">'.$invoice['status'].'</td>';
                         };
+                        $check_us = 0;
                         foreach($user as $us)
                         {
                           if($us['id']==$invoice['employee_pr'])
@@ -73,8 +74,8 @@
                           echo '<td> </td>';
                         }
                         echo '
-                          <td>'.$invoice['due_date'].'</td>';
-                        $check_us = 0;
+                          <td>'.$invoice['due_date'].'</td>
+                        ';
 
                         echo'
                           <td>
