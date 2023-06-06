@@ -57,7 +57,7 @@
           <a class="item itemaccordion" href="admin.php?act=invoice"><i class="file invoice icon"></i>Invoice</a>
           <a class="item itemaccordion" href="admin.php?act=catalog"><i class="list ul icon"></i>Catalog</a>
           <a class="item itemaccordion" href="admin.php?act=product"><i class="shopping basket icon"></i>Product</a>
-          <a class="item itemaccordion" href="admin.php?act=insert_data"><i class="database icon"></i>Insert Data</a>
+          <!-- <a class="item itemaccordion" href="admin.php?act=insert_data"><i class="database icon"></i>Insert Data</a> -->
         </div>
       </div>
       <!-- Begin Simple Accordion -->
