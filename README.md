@@ -75,7 +75,7 @@ Participants | Name | Student_ID | Task |
 
 **1. Homepage**
 
-![alt text](./img_detail_git/admin.png)
+![alt text](./img_detail_git/admin_invoice.png)
 
 <!-- **2. Insert Data**
 

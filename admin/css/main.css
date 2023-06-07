@@ -189,7 +189,7 @@ input[type=submit]:hover {
 }
 
 .button-print {
-  background-color: #ee7ed2; /* Green */
+  background-color: #efb0d3; /* Green */
   border: none;
   color: white;
   padding: 4px 20px;
@@ -205,7 +205,7 @@ input[type=submit]:hover {
 }
 .button-print:hover{
   color: white;
-  background-color: #ee7ed2;
+  background-color: #efb0d3;
 }
 
 
