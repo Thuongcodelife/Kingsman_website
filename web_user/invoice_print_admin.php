@@ -214,9 +214,19 @@
             <div class="invoice-info">
                 <span class="invoice-info-key">Due Date:</span>
                 <span class="invoice-info-value">'.$kq_order[0]['due_date'].'</span>
-            </div>
-        </div>    
-    ';
+            </div>';
+            if($kq_order[0]['status']=="Cancel")
+            {
+              echo'
+              <div class="invoice-info">
+                <span class="invoice-info-key">Due Date:</span>
+                <span class="invoice-info-value">'.$kq_order[0]['status'].'</span>
+              </div>
+              ';
+            }
+        echo'
+          </div>    
+        ';
       ?>
 
 <!-- <div class="invoice-info">
