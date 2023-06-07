@@ -1,3 +1,5 @@
+
+
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
   <div class="ui container grid">
     <div class="row">
@@ -28,7 +30,7 @@
                     <label>Description</label>
                     <input type="text" name="Description_product" placeholder="Please enter description product" ></input>
                     <label>Size</label>
-                    <input type="text" name="size_product" placeholder="Please enter size product" ></input>
+                    <input type="text" name="size_product" placeholder="Please enter size product not number"  pattern="[A-Za-z]+"></input>
                     <label>Catalog</label>
                     <select name="iddm" id="">
                       <option value="0">Choose Catalog</option>

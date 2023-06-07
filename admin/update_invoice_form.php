@@ -1,9 +1,32 @@
 <script>
 function validateForm() {
   var idee = document.getElementById("idee").value;
-  
+  var email = document.getElementsByName("email")[0].value;
+  var fname = document.getElementsByName("fname")[0].value;
+  var lname = document.getElementsByName("lname")[0].value;
+  var address = document.getElementsByName("address")[0].value;
+
   if (idee == 0) {
     alert("Please choose employee entry!");
+    return false;
+  }
+  if (email == "") {
+  alert("Please fill out client email!");
+  return false;
+  }
+
+  if (fname == "") {
+    alert("Please fill out client first name!");
+    return false;
+  }
+
+  if (lname == "") {
+    alert("Please fill out client last name!");
+    return false;
+  }
+
+  if (address == "") {
+    alert("Please fill out client address!");
     return false;
   }
   return true;
@@ -26,8 +49,18 @@ function validateForm() {
               // echo var_dump($result);
               ?>
               <label>Invoice Code<span style="color: red"> *</span></label>
-              <input type="text" name="id_invoice" value="<?=$result[0]['invoice_id']?>" placeholder="Name of Product" readonly>
+              <input class="banban" type="text" name="id_invoice" value="<?=$result[0]['invoice_id']?>" placeholder="Name of Product" readonly>
               <form action="admin.php?act=updateform_invoice" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+                    <label>First Name <span style="color: red"> *</span></label>
+                    <input type="text" name="fname" value="<?=$result[0]['fname']?>" placeholder="First name"></input>
+                    <label>Last Name <span style="color: red"> *</span></label>
+                    <input type="text" name="lname" value="<?=$result[0]['lname']?>" placeholder="Last name"></input>
+                    <label>Phone <span style="color: red"> *</span></label>
+                    <input type="text" name="phone" value="<?=$result[0]['phone']?>" placeholder="Phone of client"></input>
+                    <label>Email <span style="color: red"> *</span></label>
+                    <input type="text" name="email" value="<?=$result[0]['email']?>" placeholder="Email of client"></input>
+                    <label>Address <span style="color: red"> *</span></label>
+                    <input type="text" name="address" value="<?=$result[0]['address']?>" placeholder="Address of client"></input>
                     <label>Status<span style="color: red"> *</span></label>
                     <select name="status" id="">
                       <option value="Pending">Choose Status</option>

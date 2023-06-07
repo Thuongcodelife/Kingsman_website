@@ -538,10 +538,10 @@
                       $prices_pd = $_POST['prices_product'];
                       $oldprices_pd = $_POST['old_prices_product'];
                       $view_pd = $_POST['view_product'];
-                      $special_pd = $_POST['Special_product'];
+                      $special_pd = $_POST['special_product'];
                       $sup_pd = $_POST['idsup'];
                       $size_pd = strtoupper($_POST['size_product']);
-                      $description_pd = $_POST['Description_product'];
+                      $description_pd = $_POST['description_product'];
                       //upload picture
                       $target_dir = "../uploads/";
                       $target_file = $target_dir . basename($_FILES["img_product"]["name"]);
@@ -727,8 +727,13 @@
                     {
                       $id=$_POST['id'];
                       $id_ee=$_POST['idee'];
+                      $phone = $_POST['phone'];
+                      $email = $_POST['email'];
+                      $fname = $_POST['fname'];
+                      $lname = $_POST['lname'];
+                      $address = $_POST['address'];
                       $status=$_POST['status'];
-                      update_invoice($id,$id_ee,$status);
+                      update_invoice($id,$id_ee,$status,$phone,$email,$fname,$lname,$address);
                       $kq = getall_invoice();
                       $user = getall_user();
                       include ("invoice.php");

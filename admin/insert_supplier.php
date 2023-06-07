@@ -1,3 +1,32 @@
+<script>
+function validateForm() {
+  var name = document.getElementsByName("supplier_name")[0].value;
+  var bank = document.getElementsByName("supplier_bank")[0].value;
+  var address = document.getElementsByName("supplier_address")[0].value;
+  var tax_code = document.getElementsByName("supplier_tax")[0].value;
+
+  if (name == "") {
+    alert("Please fill out supplier name!");
+    return false;
+  }
+  if (bank == "") {
+    alert("Please fill out bank account!");
+    return false;
+  }
+  if (address == "") {
+    alert("Please fill out address!");
+    return false;
+  }
+  if (tax_code == "") {
+    alert("Please fill out tax code!!");
+    return false;
+  }
+  return true;
+}
+</script>
+
+
+
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
   <div class="ui container grid">
     <div class="row">
@@ -12,7 +41,7 @@
               <?php
               // echo var_dump($result);
               ?>
-                <form action="admin.php?act=insert_supplier" method="POST">
+                <form action="admin.php?act=insert_supplier" method="POST"  onsubmit="return validateForm()">
                 <label>Name</label>
                 <input type="text" name="supplier_name" placeholder="Name of Supplier"></input>
                 <label>Address</label>

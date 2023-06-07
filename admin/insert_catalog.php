@@ -1,3 +1,27 @@
+<script>
+function validateForm() {
+  var name = document.getElementById("name_catalog").value;
+  var pr = document.getElementsByName("prioritize_catalog")[0].value;
+  var dis = document.getElementsByName("display_catalog")[0].value;
+
+  if (name == "") {
+    alert("Please choose employee entry!");
+    return false;
+  }
+  if (pr!="1" && pr!="0") {
+    alert("Please fill out true prioritize!");
+    return false;
+  }
+
+  if (dis!="1" && dis!="0") {
+    alert("Please fill out true display!");
+    return false;
+  }
+  return true;
+}
+</script>
+
+
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
   <div class="ui container grid">
     <div class="row">
@@ -12,13 +36,13 @@
               <?php
               // echo var_dump($result);
               ?>
-                <form action="admin.php?act=insert_catalog" method="POST">
+                <form action="admin.php?act=insert_catalog" method="POST" onsubmit="return validateForm()">
                     <label>Name</label>
-                    <input type="text" name="name_catalog" placeholder="Name of catalog"></input>
+                    <input type="text"  id="name_catalog" name="name_catalog" placeholder="Name of catalog"></input>
                     <label>Priortize</label>
-                    <input type="text" name="prioritize_catalog" placeholder="Priortize of product 1 is yes or 0 is no"></input>
+                    <input type="text" id="prioritize_catalog" name="prioritize_catalog" placeholder="Priortize of product 1 is yes or 0 is no"></input>
                     <label>Display</label>
-                    <input type="text" name="display_catalog" placeholder="Display of catalog 1 yes or 0 no" ></input>
+                    <input type="text" id="display_catalog" name="display_catalog" placeholder="Display of catalog 1 yes or 0 no" ></input>
                     <input type="submit" name="submit" value="submit"></input>
                 </form>
             </div>
@@ -33,7 +57,7 @@
 </div>
 </body>
 <!-- inject:js -->
-<script src=" vendors/jquery/jquery.min.js">
+<script src="vendors/jquery/jquery.min.js">
 </script>
 <script src="vendors/fomantic-ui/semantic.min.js"></script>
 <script src="js/main.js"></script>

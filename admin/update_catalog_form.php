@@ -1,3 +1,17 @@
+<head>
+<script>
+function validateForm() {
+  var name = document.getElementById("catalog_name").value;
+  console.log(name);
+  if (name=="") {
+    alert("Please fill out name catalog!");
+    return false;
+  }
+  return true;
+}
+</script>
+</head>
+<body>
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
   <div class="ui container grid">
     <div class="row">
@@ -12,10 +26,10 @@
               <?php
               // echo var_dump($result);
               ?>
-              <form action="admin.php?act=updateform_catalog" method="POST">
-                <input style="width=100% color: red;" type="text" name="catalog_name" id=""
-                  value="<?=$result[0]['catalog_name']?>">
-                <input type="hidden" name="id" value="<?=$result[0]['id_catalog_k']?>">
+              <form onsubmit="return validateForm()" action="admin.php?act=updateform_catalog" method="POST">
+                <label>Name <span style="color: red"> *</span></label>
+                  <input type="text" id="catalog_name" name="catalog_name" value="<?=$result[0]['catalog_name']?>">
+                  <input type="hidden" name="id" value="<?=$result[0]['id_catalog_k']?>">
                 <input type="submit" name="catalog_update" value="Update">
               </form>
             </div>
@@ -30,7 +44,7 @@
 </div>
 </body>
 <!-- inject:js -->
-<script src=" vendors/jquery/jquery.min.js">
+<script src="vendors/jquery/jquery.min.js">
 </script>
 <script src="vendors/fomantic-ui/semantic.min.js"></script>
 <script src="js/main.js"></script>

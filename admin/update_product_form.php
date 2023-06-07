@@ -1,3 +1,25 @@
+<script>
+function validateForm() {
+  var name = document.getElementsByName("name_product")[0].value;
+  var old_prices = document.getElementsByName("oldprices_product")[0].value;
+  var prices = document.getElementsByName("prices_product")[0].value;
+  var quantity = document.getElementsByName("quantity_product")[0].value;
+  var view = document.getElementsByName("view_product")[0].value;
+  var special = document.getElementsByName("special_product")[0].value;
+  var description = document.getElementsByName("description_product")[0].value;
+  var size = document.getElementsByName("size_product")[0].value;
+  var iddm = document.getElementsByName("iddm")[0].value;
+  var idee = document.getElementsByName("idee")[0].value;
+  var idsup = document.getElementsByName("idsup")[0].value;
+
+  if (name=="" || old_prices=="" || prices=="" || quantity=="" || view=="" || special=="" || description=="" || size=="" || iddm=="" || idee=="" || idsup=="") {
+    alert("Missing information!");
+    return false;
+  }
+  return true;
+}
+</script>
+
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
   <div class="ui container grid">
     <div class="row">
@@ -12,7 +34,7 @@
               <?php
               // echo var_dump($result);
               ?>
-              <form action="admin.php?act=updateform_product" method="POST" enctype="multipart/form-data">
+              <form action="admin.php?act=updateform_product" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                     <label>Name</label>
                     <input type="text" name="name_product" value="<?=$result[0]['product_name']?>" placeholder="Name of Product"></input>
                     <label>Old Prices</label>
@@ -120,7 +142,7 @@
 </div>
 </body>
 <!-- inject:js -->
-<script src=" vendors/jquery/jquery.min.js">
+<script src="vendors/jquery/jquery.min.js">
 </script>
 <script src="vendors/fomantic-ui/semantic.min.js"></script>
 <script src="js/main.js"></script>
@@ -142,10 +164,7 @@
 
 <script>
 $(document).ready(function() {
-
-  $(document).ready(function() {
-    $('#example').DataTable();
-  });
+  $('#example').DataTable();
   table.buttons().container().appendTo(
     $('div.eight.column:eq(0)', table.table().container())
   );

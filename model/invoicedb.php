@@ -18,9 +18,9 @@
     return $kq;
     }
 
-    function update_invoice($id,$id_ee,$status){
+    function update_invoice($id,$id_ee,$status,$phone,$email,$fname,$lname,$address){
         $conn=connectdb();
-        $sql = "UPDATE tbl_order SET status='$status', employee_pr='$id_ee' WHERE id=".$id;
+        $sql = "UPDATE tbl_order SET status='$status', employee_pr='$id_ee', phone='$phone', email='$email', lname='$lname', fname='$fname', address='$address' WHERE id=".$id;
         $stmt = $conn->prepare($sql);
         $stmt->execute();
     }
