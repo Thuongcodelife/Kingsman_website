@@ -9,6 +9,7 @@
         $user=$_POST['username'];
         $pass=$_POST['password'];
         $role= check_user($user,$pass);
+        $_SESSION['name']=$user;
         $_SESSION['role']=$role;
         // var_dump($role);
         if($role==1)
