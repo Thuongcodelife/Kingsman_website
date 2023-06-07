@@ -76,14 +76,22 @@
                         echo '
                           <td>'.$invoice['due_date'].'</td>
                         ';
-
-                        echo'
+                        if($invoice['status'] == "Cancel")
+                        {
+                          echo'
+                          <td>
+                            <button  class="button-detail"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Details</a></button> 
+                          </td>
+                        </tr>';
+                        } else {
+                          echo'
                           <td>
                             <button  class="button-update"><a class="change-a" href="admin.php?act=updateform_invoice&id='.$invoice['id'].'">Update</a></button>
                             <button  class="button-detail"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Details</a></button> 
                             <button  class="button-print"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Print</a></button> 
                           </td>
                         </tr>';
+                        }
                       $i++;
                     }
                   }

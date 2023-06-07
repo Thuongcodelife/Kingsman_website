@@ -736,6 +736,18 @@
                       update_invoice($id,$id_ee,$status,$phone,$email,$fname,$lname,$address);
                       $kq = getall_invoice();
                       $user = getall_user();
+                      if($status=="Cancel")
+                      {
+                        $id_cart = getall_cart_month($id);
+                        foreach($id_cart as $cart)
+                        {
+                          $quantity = $cart['quantity'];
+                          $id_pro = $cart['id_pro'];
+                          $product = getoneProduct($id_pro);
+                          $quantity = $quantity + $product[0]['quantity'];
+                          update_product_quantity($id_pro, $quantity);
+                        }
+                      }
                       include ("invoice.php");
                       echo '<script type="text/javascript">';
                       echo "alert('Update invoice Successed!');";
