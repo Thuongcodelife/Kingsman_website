@@ -1,3 +1,16 @@
+<script>
+function validateForm() {
+  var idee = document.getElementById("idee").value;
+  
+  if (idee == 0) {
+    alert("Please choose employee entry!");
+    return false;
+  }
+  return true;
+}
+</script>
+
+
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
   <div class="ui container grid">
     <div class="row">
@@ -14,7 +27,7 @@
               ?>
               <label>Invoice Code<span style="color: red"> *</span></label>
               <input type="text" name="id_invoice" value="<?=$result[0]['invoice_id']?>" placeholder="Name of Product" readonly>
-              <form action="admin.php?act=updateform_invoice" method="POST" enctype="multipart/form-data">
+              <form action="admin.php?act=updateform_invoice" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                     <label>Status<span style="color: red"> *</span></label>
                     <select name="status" id="">
                       <option value="Pending">Choose Status</option>
@@ -40,8 +53,8 @@
                       ?>
                     </select>
                     <label>Employee Entry <span style="color: red"> *</span></label>
-                    <select name="idee" id="">
-                      <option value=0 selected>Choose Employee Entry</option>
+                    <select name="idee" id="idee" required>
+                      <option value="0" selected>Choose Employee Entry</option>
                       <?php
                         if(isset($dmee))
                         {
@@ -68,8 +81,7 @@
 </div>
 </body>
 <!-- inject:js -->
-<script src=" vendors/jquery/jquery.min.js">
-</script>
+<script src="vendors/jquery/jquery.min.js"></script>
 <script src="vendors/fomantic-ui/semantic.min.js"></script>
 <script src="js/main.js"></script>
 <!-- endinject -->

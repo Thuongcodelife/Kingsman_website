@@ -87,16 +87,20 @@
                                                         <td>Subtotal</td>
                                                         <td>'.number_format($total).'đ</td>
                                                         </tr>
-                                                        <tr class="order-shipping">
+                                                        <tr>
                                                             <td colspan="2">
-                                                                <div class="shipping-amount">
-                                                                    <span class="title">Shipping Method</span>
-                                                                    <span class="amount">0.00đ</span>
+                                                                <div class="order-shipping" >
+                                                                    <div class="shipping-amount">
+                                                                        <span class="title">Shipping Method</span>
+                                                                        <span class="amount">0.00đ</span>
+                                                                    </div>
                                                                 </div>
+                                                                <br>
                                                                 <div class="input-group">
                                                                     <input type="radio" id="radio1" name="shipping" checked>
                                                                     <label for="radio1">Free Shippping</label>
                                                                 </div>
+                                                                <br>
                                                                 <div class="input-group">
                                                                     <input type="radio" id="radio2" name="shipping">
                                                                     <label for="radio2">Local</label>

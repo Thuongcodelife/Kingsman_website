@@ -32,10 +32,11 @@ Participants | Name | Student_ID | Task |
 3. Run Xampp start Apache and MySQL.
 4. Past "http://localhost/phpmyadmin/" in URL google.
 5. Create database with name "fashion" in localhost phpmyadmin.
-6. Ater that import database with data file in folder database.
+6. After that import database with data file in folder database.
 7. Run code following links URL Example "http://localhost/Website_Kingsman/admin/admin.php"
-8. Username: adminthuong Password: 123123
-8. Good Luck!
+8. Admin > Username: adminthuong Password: 123123 "http://localhost/website_kingsman/admin/login.php"
+9. User > Username: adminthuong Password: 123123 "http://localhost/website_kingsman/web_user/login_user.php"
+10. The above link is just an illustrative path, it may be different, Good Luck!
 <br>
 ---------------------------------------------End-----------------------------------------
 

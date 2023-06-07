@@ -78,7 +78,7 @@
                                                                     <td>Subtotal</td>
                                                                     <td>'.number_format($total_final).'đ</td>
                                                                 </tr>
-                                                                <tr class="order-shipping">
+                                                                <tr>
                                                                     <td>Shipping</td>
                                                                     <td>
                                                                         <div class="input-group">
@@ -95,14 +95,6 @@
                                                                 <form id="check_cart_product_'.$i.'"action="index.php?act=checkout" method="POST">
                                                                     <td>Payment Method</td>
                                                                     <td>
-                                                                            <div class="order-payment-method">
-                                                                            <div class="single-payment">
-                                                                                <div class="input-group">
-                                                                                    <input type="radio" id="radio5" value="1" name="payment">
-                                                                                    <label for="radio5">Cash on delivery</label>
-                                                                                </div>
-                                                                            </div>
-                                                                            <br>
                                                                             <div class="single-payment">
                                                                                 <div class="input-group justify-content-between align-items-center">
                                                                                     <input type="radio" id="radio6"  value="2" name="payment" checked>
@@ -110,6 +102,14 @@
                                                                                     <img style="width: 110px; height: 40px;" src="../assets/images/others/momo3.png" alt="Paypal payment">
                                                                                 </div>
                                                                             </div>
+                                                                            <br>
+                                                                            <div class="order-payment-method">
+                                                                            <div class="single-payment">
+                                                                                <div class="input-group">
+                                                                                    <input type="radio" id="radio5" value="1" name="payment">
+                                                                                    <label for="radio5">Cash on delivery</label>
+                                                                                </div>
+                                                                            </div>                                                                            
                                                                         </div>
                                                                     </td>
                                                                 </tr>

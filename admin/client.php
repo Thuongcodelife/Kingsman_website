@@ -20,7 +20,7 @@
                     <th>Address</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>User</th>
+                    <th>Function</th>
                     <!-- <th>Password</th>
                     <th>Function</th> -->
                     <!-- <th>E-mail</th> -->

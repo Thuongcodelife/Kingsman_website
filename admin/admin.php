@@ -91,17 +91,56 @@
             }
           // delete client
           case 'del_client':
-            {
+          {
+
               if(isset($_GET['id']))
               {
                 $id=$_GET['id'];
-                delete_client($id);
+                // delete_client($id);
+                echo '<script>
+                  if (confirm("Do you want to delete client?")) {
+                      window.location.href = "admin.php?act=delete_client_sc&id=' . $id . '";
+                  } else {
+                      window.location.href = "admin.php?act=delete_client_fl";
+                  }
+                </script>';
+              } else {
+                $kq = getall_client();
+                include ("client.php");
+                echo '<script>
+                    alert("Delete client failure!");
+                </script>';
               }
+              break;
+          }
+          case 'delete_client_fl':
+            {
               $kq = getall_client();
               include ("client.php");
-              echo '<script type="text/javascript">';
-              echo "alert('Delete Client Successed!');";
-              echo '</script>';
+              echo '<script>
+                    alert("Cancelled!");
+                </script>';
+              break;
+            }
+            case 'delete_client_sc':
+            {
+              if(isset($_GET['id']) && ($_GET['id'] != ""))
+              {
+                $id = $_GET['id'];
+                delete_client($id);
+                $kq = getall_client();
+                include ("client.php");
+                echo '<script>
+                    alert("Delete client Sucessed!");
+                </script>';
+              }
+              else{
+                $kq = getall_client();
+                include ("client.php");
+                echo '<script>
+                    alert("Delete client Failure!");
+                </script>';
+              }
               break;
             }
               
@@ -192,17 +231,60 @@
                         break;
                       }
                       else{
-                        delete_supplier($id);
-                        $kq = getall_supplier();
-                        include ("supplier.php");
-                        echo '<script type="text/javascript">';
-                        echo "alert('Delete Supplier Successed');";
-                        echo '</script>';
-                        break;
-                      }
+                        echo '<script>
+                        if (confirm("Do you want to delete supplier?")) {
+                            window.location.href = "admin.php?act=delete_supplier_sc&id=' . $id . '";
+                        } else {
+                            window.location.href = "admin.php?act=delete_supplier_fl";
+                        }
+                        </script>';
+                      } 
+                      // delete_supplier($id);
+                      //   $kq = getall_supplier();
+                      //   include ("supplier.php");
+                      //   echo '<script type="text/javascript">';
+                      //   echo "alert('Delete Supplier Successed');";
+                      //   echo '</script>';
+                      //   break;
+                    } else {
+                      $kq = getall_supplier();
+                      include ("supplier.php");
+                      echo '<script>
+                          alert("Delete Supplier failure!");
+                      </script>';
                     }
                     break;
                   }
+                  case 'delete_supplier_fl':
+                    {
+                      $kq = getall_supplier();
+                      include ("supplier.php");
+                      echo '<script>
+                          alert("Cancelled!");
+                      </script>';
+                      break;
+                    }
+                    case 'delete_supplier_sc':
+                    {
+                      if(isset($_GET['id']) && ($_GET['id'] != ""))
+                      {
+                        $id = $_GET['id'];
+                        delete_supplier($id);
+                        $kq = getall_supplier();
+                        include ("supplier.php");
+                        echo '<script>
+                            alert("Delete supplier sucessed!");
+                        </script>';
+                      }
+                      else{
+                        $kq = getall_supplier();
+                        include ("supplier.php");
+                        echo '<script>
+                            alert("Delete supplier failure!");
+                        </script>';
+                      }
+                      break;
+                    }
                   //insert supplier
                   case 'insert_supplier':
                     {
@@ -335,36 +417,74 @@
           }
           // delete catalog
           case 'del_catalog':
-          {
-            if(isset($_GET['id']))
             {
-              $kq = getall_product();
-              $id=$_GET['id'];
-              $check = false;
-              foreach($kq as $dm){
-                if($dm['catalog_id'] == $id)
-                {
-                  $check=true;
+              if(isset($_GET['id']))
+              {
+                $kq = getall_product();
+                $id = $_GET['id'];
+                $check = false;
+                foreach($kq as $dm){
+                  if($dm['catalog_id'] == $id)
+                  {
+                    $check=true;
+                  }
                 }
-              }
-              if($check){
+                if($check){
+                  $kq = getall_catalog();
+                  include ("catalog.php");
+                  echo '<script>
+                  alert("Do not delete catalog because do not run out product!");
+                  </script>';
+                }
+                else{
+                  echo '<script>
+                  if (confirm("Do you want to delete catalog?")) {
+                      window.location.href = "admin.php?act=delete_catalog_sc&id=' . $id . '";
+                  } else {
+                      window.location.href = "admin.php?act=delete_catalog_fl";
+                  }
+                  </script>';
+                }
+              } else {
                 $kq = getall_catalog();
                 include ("catalog.php");
                 echo '<script>
-                alert("Do not delete catalog because do not run out product!");
+                    alert("Delete Catalog Failure!");
                 </script>';
               }
-              else{
+              break;
+            }
+            case 'delete_catalog_fl':
+            {
+              $kq = getall_catalog();
+              include ("catalog.php");
+              echo '<script>
+                    alert("Cancelled!");
+                </script>';
+              break;
+            }
+            case 'delete_catalog_sc':
+            {
+              if(isset($_GET['id']) && ($_GET['id'] != ""))
+              {
+                $id = $_GET['id'];
                 delete_catalog($id);
                 $kq = getall_catalog();
                 include ("catalog.php");
                 echo '<script>
-                alert("Delete Catalog Sucessed!");
+                    alert("Delete Catalog Sucessed!");
                 </script>';
               }
+              else{
+                $kq = getall_catalog();
+                include ("catalog.php");
+                echo '<script>
+                    alert("Delete Catalog Failure!");
+                </script>';
+              }
+              break;
             }
-            break;
-          }
+          //end delete_catalog
           // update catalog
           case 'updateform_catalog':
             {
@@ -471,19 +591,66 @@
                 if(isset($_GET['id']))
                 {
                     $id=$_GET['id'];
-                    delete_product($id);
+                    // delete_product($id);
+                    echo '<script>
+                    if (confirm("Do you want to delete product?")) {
+                        window.location.href = "admin.php?act=delete_product_sc&id=' . $id . '";
+                    } else {
+                        window.location.href = "admin.php?act=delete_product_fl";
+                    }
+                    </script>';
                 }
-                $dmsp = getall_catalog();
-                $dmee = getall_user();
-                $dmsup = getall_supplier();
-                $kq = getall_product();
-                include ("product.php");
-                echo '<script>
-                alert("Delete Product Sucessed!");
-                </script>';
+                else {
+                  $dmsp = getall_catalog();
+                  $dmee = getall_user();
+                  $dmsup = getall_supplier();
+                  $kq = getall_product();
+                  include ("product.php");
+                  echo '<script>
+                  alert("Delete product failure!");
+                  </script>';
+                }
                 break;
               }
-      
+              case 'delete_product_fl':
+                {
+                    $dmsp = getall_catalog();
+                    $dmee = getall_user();
+                    $dmsup = getall_supplier();
+                    $kq = getall_product();
+                    include ("product.php");
+                    echo '<script>
+                        alert("Cancelled!");
+                    </script>';
+                    break;
+                }
+              case 'delete_product_sc':
+                {
+                    if(isset($_GET['id']) && ($_GET['id'] != ""))
+                    {
+                        $id = $_GET['id'];
+                        delete_product($id);
+                        $dmsp = getall_catalog();
+                        $dmee = getall_user();
+                        $dmsup = getall_supplier();
+                        $kq = getall_product();
+                        include ("product.php");
+                        echo '<script>
+                            alert("Delete product Sucessed!");
+                        </script>';
+                    }
+                    else{
+                        $dmsp = getall_catalog();
+                        $dmee = getall_user();
+                        $dmsup = getall_supplier();
+                        $kq = getall_product();
+                        include ("product.php");
+                        echo '<script>
+                            alert("Delete product Failure!");
+                        </script>';
+                    }
+                    break;
+                }
               case 'updateform_product':
                 {
                   if(isset($_GET['id']))
