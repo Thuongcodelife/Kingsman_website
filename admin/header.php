@@ -18,7 +18,7 @@
               </div>
               <div class="ui top pointing dropdown admindropdown link item right">
                 <img class="imgrad" src="images/user.png" alt="">
-                <span class="clear navtext"><strong>Nhất Thưởng</strong></span>
+                <span class="clear navtext"><strong>Admin</strong></span>
                 <i class="dropdown icon navtext"></i>
                 <div class="menu">
                   <div class="item">

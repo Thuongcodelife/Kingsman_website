@@ -49,7 +49,7 @@
       <!-- <a class="item" href="table.html"><i class="table icon"></i> Table</a> -->
       <!-- Function -->
       <div class=" ui accordion simpleaccordion item">
-        <div class="title titleaccordion item"><i class="dropdown icon"></i>Statistic</div>
+        <div class="title titleaccordion item"><i class="dropdown icon"></i>Managements</div>
         <div class="content contentaccordion">
           <a class="item itemaccordion" href="admin.php?act=statistic"><i class="calculator icon"></i>Statistic</a>
           <a class="item itemaccordion" href="admin.php?act=client"><i class="user shield icon"></i>Client</a>
