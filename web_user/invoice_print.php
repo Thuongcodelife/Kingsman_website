@@ -23,7 +23,7 @@
   }
 
   .invoice {
-    height: min(600px, 100vw);
+    height: min(700px, 100vw);
     width: min(1200px, 100vw);
     font: 100 0.7rem 'myriad pro', helvetica, sans-serif;
     border: 0.5px solid grey;
@@ -184,6 +184,7 @@
   </div>
   <div class='invoice-wrapper'>
     <div class='invoice-billing'>
+    <h2 class="invoice-info-value" style="font-size: 10px;">DELIVERY DETAILS</h2>
       <?php
         echo '
             <h2 class="invoice-billing-company">'.$kq_order[0]['fname'].' '.$kq_order[0]['lname'].'</h2>
