@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 09:33 PM
+-- Generation Time: Jun 08, 2023 at 08:54 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -38,15 +38,6 @@ CREATE TABLE `tbl_cart` (
   `img_pro` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `tbl_cart`
---
-
-INSERT INTO `tbl_cart` (`id`, `id_order`, `id_pro`, `quantity`, `prices`, `size`, `name_pro`, `img_pro`) VALUES
-(172, 115, 73, 2, 34500000.00, 'L', 'Overside Shirt', 'shirt4.png'),
-(173, 116, 74, 1, 30000000.00, 'M', 'White Shirt', 'shirt2.png'),
-(174, 117, 74, 1, 30000000.00, 'M', 'White Shirt', 'shirt2.png');
-
 -- --------------------------------------------------------
 
 --
@@ -65,8 +56,9 @@ CREATE TABLE `tbl_catalog` (
 --
 
 INSERT INTO `tbl_catalog` (`id_catalog_k`, `catalog_name`, `prioritize`, `display_ctl`) VALUES
-(79, 'Shirt', 1, 1),
-(80, 'Suit', 1, 1);
+(94, 'Notch lapel', 1, 1),
+(95, 'Peak lapel', 1, 1),
+(96, 'Shawl lapel', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -91,23 +83,7 @@ CREATE TABLE `tbl_client` (
 --
 
 INSERT INTO `tbl_client` (`id`, `fname`, `lname`, `sex`, `address`, `email`, `phone`, `user`, `password`) VALUES
-(32, 'Nguyen', 'Thuong', 2, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong1234', '123'),
-(33, 'Nguyen', 'Thuong', 1, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong12345', '123'),
-(34, 'Nguyen', 'Thuong', 1, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong123456', '123'),
-(35, 'Thưởng', 'Thuong', 2, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong1da', '123'),
-(36, 'Nguyen', 'Nguyen', 2, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong12341', '123'),
-(37, 'Nguyen', 'Thuong', 1, '63/6H Xuan Thoi Dong, Hoc Mon, TPHCMM', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong123412', '123');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_methodpayment`
---
-
-CREATE TABLE `tbl_methodpayment` (
-  `id_method` int(11) NOT NULL,
-  `name` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+(32, 'Thuong', 'Nguyen', 2, 'KTX KHU A', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong1234', '123');
 
 -- --------------------------------------------------------
 
@@ -120,7 +96,7 @@ CREATE TABLE `tbl_order` (
   `invoice_id` varchar(20) NOT NULL,
   `total_prices` double(10,0) NOT NULL DEFAULT 0,
   `payment` tinyint(1) NOT NULL DEFAULT 1,
-  `id_user` int(6) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `phone` varchar(20) NOT NULL,
@@ -129,17 +105,8 @@ CREATE TABLE `tbl_order` (
   `notes` varchar(255) NOT NULL DEFAULT 'Not note',
   `due_date` date NOT NULL DEFAULT current_timestamp(),
   `status` varchar(20) NOT NULL DEFAULT 'Pending',
-  `employee_pr` int(10) NOT NULL DEFAULT 0
+  `employee_pr` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `tbl_order`
---
-
-INSERT INTO `tbl_order` (`id`, `invoice_id`, `total_prices`, `payment`, `id_user`, `fname`, `lname`, `phone`, `email`, `address`, `notes`, `due_date`, `status`, `employee_pr`) VALUES
-(115, 'KINGSMAN627650', 75900000, 2, 32, 'Nguyen', 'Thuong', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-07', 'Pending', 0),
-(116, 'KINGSMAN269995', 33000000, 2, 32, 'Nguyen', 'Thuong', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', 'Not note', '2023-06-07', 'Pending', 0),
-(117, 'KINGSMAN753860', 33000000, 2, 32, 'Nguyen', 'Thuong', '0342888525', '2052000@gm.uit.edu.vn', '63/6H Xuan Thoi Dong, Hoc Mon, TPHCM', '', '2023-06-07', 'Pending', 0);
 
 -- --------------------------------------------------------
 
@@ -169,12 +136,14 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id_product`, `product_name`, `quantity`, `product_img`, `product_prices`, `catalog_id`, `employee_entry`, `entry_date`, `sup_id`, `view`, `special`, `old_prices`, `description`, `size`) VALUES
-(73, 'Overside Shirt', 105, 'shirt4.png', 34500000, 79, 1, '2023-06-04', 14, 1, 1, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L'),
-(74, 'White Shirt', 96, 'shirt2.png', 30000000, 79, 1, '2023-06-04', 14, 1, 0, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'M'),
-(75, 'Blue Shirt', 99, 'shirt3.png', 23000000, 79, 1, '2023-06-04', 14, 0, 0, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L'),
-(76, 'Black Shirt', 99, 'shirt1.png', 34000000, 79, 1, '2023-06-04', 14, 1, 1, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'XXL'),
-(77, 'Grey Suit', 98, 'suit (1).png', 34000000, 80, 1, '2023-06-04', 16, 1, 1, 500000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L'),
-(78, 'Men Suit', 0, 'suit (2).png', 23000000, 80, 1, '2023-06-04', 16, 1, 1, 380000, 'shirt, any of a variety of garments having sleeves and worn on the upper part of the body, often under a coat, jacket, or other garment. Shirts were worn as early as the 18th dynasty of ancient Egypt (c. 1539–1292 BCE); they were made of a rectangular pie', 'L');
+(90, 'Grey Vest', 150, 'suit (6).png', 27000000, 94, 1, '2023-06-08', 16, 1, 1, 27000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
+(91, 'Black Vest', 150, 'suit (2).png', 27500000, 95, 1, '2023-06-08', 16, 1, 1, 27500000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XL'),
+(92, 'Brown Vest', 150, 'product-41.png', 20000000, 96, 1, '2023-06-08', 16, 1, 1, 20000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XXL'),
+(93, 'Kings Vest', 10, 'suit (3).png', 55000000, 96, 1, '2023-06-08', 14, 1, 1, 55000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'M'),
+(94, 'Supper Vest', 150, 'suit (5).png', 23000000, 95, 1, '2023-06-08', 14, 1, 1, 27500000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
+(95, 'Ken Vest', 123, 'product-39.png', 20000000, 94, 1, '2023-06-08', 14, 1, 1, 20000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
+(96, 'Max Vest', 123, 'product-43.png', 27000000, 94, 1, '2023-06-08', 14, 1, 1, 27000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XXL'),
+(97, 'Break Vest', 123, 'suit (4).png', 27000000, 94, 1, '2023-06-08', 16, 1, 1, 27000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XXXL');
 
 -- --------------------------------------------------------
 
@@ -195,7 +164,7 @@ CREATE TABLE `tbl_supplier` (
 --
 
 INSERT INTO `tbl_supplier` (`sup_id`, `sup_name`, `sup_address`, `sup_bank`, `sup_tax_code`) VALUES
-(14, 'Viettien', 'US', 1231231, 123123),
+(14, 'Viettien', 'VN', 1231231, 123123),
 (16, 'Homes', 'US', 1231231, 123123);
 
 -- --------------------------------------------------------
@@ -232,7 +201,9 @@ INSERT INTO `tbl_user` (`id`, `name_us`, `address_us`, `email`, `user`, `passwor
 -- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_order` (`id_order`),
+  ADD KEY `FK_product` (`id_pro`);
 
 --
 -- Indexes for table `tbl_catalog`
@@ -247,16 +218,12 @@ ALTER TABLE `tbl_client`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_methodpayment`
---
-ALTER TABLE `tbl_methodpayment`
-  ADD PRIMARY KEY (`id_method`);
-
---
 -- Indexes for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_employee` (`employee_pr`),
+  ADD KEY `FK_client_check` (`id_user`);
 
 --
 -- Indexes for table `tbl_product`
@@ -287,43 +254,37 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 
 --
 -- AUTO_INCREMENT for table `tbl_catalog`
 --
 ALTER TABLE `tbl_catalog`
-  MODIFY `id_catalog_k` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_catalog_k` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `tbl_client`
 --
 ALTER TABLE `tbl_client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
-
---
--- AUTO_INCREMENT for table `tbl_methodpayment`
---
-ALTER TABLE `tbl_methodpayment`
-  MODIFY `id_method` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id_product` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_product` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `tbl_supplier`
 --
 ALTER TABLE `tbl_supplier`
-  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
@@ -334,6 +295,20 @@ ALTER TABLE `tbl_user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  ADD CONSTRAINT `FK_order` FOREIGN KEY (`id_order`) REFERENCES `tbl_order` (`id`),
+  ADD CONSTRAINT `FK_product` FOREIGN KEY (`id_pro`) REFERENCES `tbl_product` (`id_product`);
+
+--
+-- Constraints for table `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  ADD CONSTRAINT `FK_client_check` FOREIGN KEY (`id_user`) REFERENCES `tbl_client` (`ID`),
+  ADD CONSTRAINT `FK_employee` FOREIGN KEY (`employee_pr`) REFERENCES `tbl_user` (`id`);
 
 --
 -- Constraints for table `tbl_product`
