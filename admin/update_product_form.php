@@ -50,7 +50,7 @@ function validateForm() {
                     <label>Description</label>
                     <input type="text" name="description_product" value="<?=$result[0]['description']?>" placeholder="Please enter description" ></input>
                     <label>Size</label>
-                    <input type="text" name="size_product" value="<?=$result[0]['size']?>" placeholder="Please enter size" ></input>
+                    <input type="text" name="size_product" value="<?=$result[0]['size']?>" placeholder="Please enter size"  pattern="[A-Za-z]+" ></input>
                     <label>Catalog</label>
                     <select name="iddm" id="">
                       <option value="0">Choose Catalog</option>

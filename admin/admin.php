@@ -542,10 +542,10 @@
                       $prices_pd = $_POST['prices_product'];
                       $oldprices_pd = $_POST['old_prices_product'];
                       $view_pd = $_POST['view_product'];
-                      $special_pd = $_POST['special_product'];
+                      $special_pd = $_POST['Special_product'];
                       $sup_pd = $_POST['idsup'];
                       $size_pd = strtoupper($_POST['size_product']);
-                      $description_pd = $_POST['description_product'];
+                      $description_pd = $_POST['Description_product'];
                       //upload picture
                       $target_dir = "../uploads/";
                       $target_file = $target_dir . basename($_FILES["img_product"]["name"]);

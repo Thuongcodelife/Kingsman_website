@@ -232,7 +232,7 @@
 <!-- <div class="invoice-info">
                 <span class="invoice-info-key">Status:</span>
                 <span class="invoice-info-value">'.$kq_order[0]['status'].'</span>
-            </div> -->
+</div> -->
 
 
 

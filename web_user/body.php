@@ -141,7 +141,7 @@
                   <span class="title-highlighter highlighter-primary"
                     ><i class="far fa-shopping-basket"></i> Our New Products</span
                   >
-                  <h2 class="title">News Products</h2>
+                  <h2 class="title">New Products</h2>
                 </div>
                   <div class="isotope-button">
                   <?php
