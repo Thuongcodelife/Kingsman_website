@@ -32,11 +32,10 @@ function insert_client($lname,$fname,$sex,$email,$phone,$user,$password,$address
     return $kq;
   }
   
-  function update_client($id,$lname,$fname,$sex,$email,$phone,$user,$password,$address){
+  function update_client($id,$lname,$fname,$sex,$email,$phone,$user,$password,$address,$ban){
     $conn=connectdb();
-    $sql = "UPDATE tbl_client SET lname='".$lname."',fname='".$fname."',sex='".$sex."',email='".$email."',phone='".$phone."',user='".$user."',password='".$password."',address='".$address."' WHERE id=".$id;
+    $sql = "UPDATE tbl_client SET ban='".$ban."', lname='".$lname."',fname='".$fname."',sex='".$sex."',email='".$email."',phone='".$phone."',user='".$user."',password='".$password."',address='".$address."' WHERE id=".$id;
     $stmt = $conn->prepare($sql);
     $stmt->execute();
   }
-  
 ?>

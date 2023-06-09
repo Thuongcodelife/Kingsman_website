@@ -46,15 +46,22 @@ if (isset($_GET['act'])) {
         if (isset($_POST['user_check']) && ($_POST['user_check'])) {
           $user = $_POST['user'];
           $pass = $_POST['password'];
-          $kq = get_user($user, $pass);
+          $ban = 1;
+          $kq_ban = get_userban($user, $ban);
+          $kq_user = get_user($user, $pass);
+
           // var_dump($kq);
           // echo $kq;
-          if ($kq == 0) {
+          if ($kq_ban == 0) {
+            header('location: login_user.php?error=2');
+            exit();
+          }
+          elseif ($kq_user == 0) {
             header('location: login_user.php?error=1');
             exit();
           } else {
-            $_SESSION['username'] = $kq[0]['user'];
-            $_SESSION['iduser'] = $kq[0]['id'];
+            $_SESSION['username'] = $kq_user[0]['user'];
+            $_SESSION['iduser'] = $kq_user[0]['id'];
             header('location: index.php?act=home');
             break;
           }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2023 at 08:54 AM
+-- Generation Time: Jun 09, 2023 at 07:32 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -37,6 +37,17 @@ CREATE TABLE `tbl_cart` (
   `name_pro` varchar(50) DEFAULT NULL,
   `img_pro` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `tbl_cart`
+--
+
+INSERT INTO `tbl_cart` (`id`, `id_order`, `id_pro`, `quantity`, `prices`, `size`, `name_pro`, `img_pro`) VALUES
+(201, 141, 90, 2, 27000000.00, 'L', 'Grey Vest', 'suit (6).png'),
+(202, 142, 90, 1, 27000000.00, 'L', 'Grey Vest', 'suit (6).png'),
+(203, 142, 91, 1, 27500000.00, 'XL', 'Black Vest', 'suit (2).png'),
+(204, 143, 95, 1, 20000000.00, 'L', 'Ken Vest', 'product-39.png'),
+(206, 145, 90, 1, 27000000.00, 'L', 'Grey Vest', 'suit (6).png');
 
 -- --------------------------------------------------------
 
@@ -75,15 +86,18 @@ CREATE TABLE `tbl_client` (
   `email` varchar(50) NOT NULL,
   `phone` varchar(13) NOT NULL,
   `user` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `ban` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tbl_client`
 --
 
-INSERT INTO `tbl_client` (`id`, `fname`, `lname`, `sex`, `address`, `email`, `phone`, `user`, `password`) VALUES
-(32, 'Thuong', 'Nguyen', 2, 'KTX KHU A', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong1234', '123');
+INSERT INTO `tbl_client` (`id`, `fname`, `lname`, `sex`, `address`, `email`, `phone`, `user`, `password`, `ban`) VALUES
+(32, 'Thuong', 'Nguyen', 2, 'KTX KHU A', '2052000@gm.uit.edu.vn', '0342888525', 'nhatthuong1234', '123', 0),
+(39, 'Thuong', 'Nguyen', 1, '1', '2002@gmail.com', '0342888525', 'adminthuong', '123123', 1),
+(40, 'Thuong', 'Nguyen', 2, '1', '2002@gmail.com', '+84342888525', 'adminthuong42342', '123123', 1);
 
 -- --------------------------------------------------------
 
@@ -107,6 +121,17 @@ CREATE TABLE `tbl_order` (
   `status` varchar(20) NOT NULL DEFAULT 'Pending',
   `employee_pr` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`id`, `invoice_id`, `total_prices`, `payment`, `id_user`, `fname`, `lname`, `phone`, `email`, `address`, `notes`, `due_date`, `status`, `employee_pr`) VALUES
+(141, 'KINGSMAN876833', 59400000, 2, 39, 'Thuong', 'Nguyen', '0342888525', '2002@gmail.com', '1', '', '2023-06-08', 'Cancel', 1),
+(142, 'KINGSMAN80948', 59950000, 2, 39, 'Thuong', 'Nguyen', '0342888525', '2002@gmail.com', '1', 'hhi', '2023-06-08', 'Ordered', 9),
+(143, 'KINGSMAN728281', 22000000, 2, 39, 'Thuong', 'Nguyen', '0342888525', '2002@gmail.com', '1', '', '2023-06-08', 'Pending', NULL),
+(144, 'KINGSMAN7506', 29700000, 2, 39, 'Thuong', 'Nguyen', '0342888525', '2002@gmail.com', '1', '', '2023-06-09', 'Pending', NULL),
+(145, 'KINGSMAN216815', 29700000, 2, 40, 'Thuong', 'Nguyen', '0342888525', '2002@gmail.com', '1', '', '2023-06-09', 'Pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -136,12 +161,12 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id_product`, `product_name`, `quantity`, `product_img`, `product_prices`, `catalog_id`, `employee_entry`, `entry_date`, `sup_id`, `view`, `special`, `old_prices`, `description`, `size`) VALUES
-(90, 'Grey Vest', 150, 'suit (6).png', 27000000, 94, 1, '2023-06-08', 16, 1, 1, 27000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
-(91, 'Black Vest', 150, 'suit (2).png', 27500000, 95, 1, '2023-06-08', 16, 1, 1, 27500000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XL'),
-(92, 'Brown Vest', 150, 'product-41.png', 20000000, 96, 1, '2023-06-08', 16, 1, 1, 20000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XXL'),
+(90, 'Grey Vest', 148, 'suit (6).png', 27000000, 94, 1, '2023-06-08', 16, 1, 1, 27000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
+(91, 'Black Vest', 149, 'suit (2).png', 27500000, 95, 1, '2023-06-08', 16, 1, 1, 27500000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XL'),
+(92, 'Brown Vest', 273, 'product-41.png', 20000000, 96, 1, '2023-06-08', 16, 1, 1, 20000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XXL'),
 (93, 'Kings Vest', 10, 'suit (3).png', 55000000, 96, 1, '2023-06-08', 14, 1, 1, 55000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'M'),
 (94, 'Supper Vest', 150, 'suit (5).png', 23000000, 95, 1, '2023-06-08', 14, 1, 1, 27500000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
-(95, 'Ken Vest', 123, 'product-39.png', 20000000, 94, 1, '2023-06-08', 14, 1, 1, 20000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
+(95, 'Ken Vest', 122, 'product-39.png', 20000000, 94, 1, '2023-06-08', 14, 1, 1, 20000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'L'),
 (96, 'Max Vest', 123, 'product-43.png', 27000000, 94, 1, '2023-06-08', 14, 1, 1, 27000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XXL'),
 (97, 'Break Vest', 123, 'suit (4).png', 27000000, 94, 1, '2023-06-08', 16, 1, 1, 27000000, 'A waistcoat has a full vertical opening in the front, which fastens with buttons or snaps. Both single-breasted and double-breasted waistcoats exist, regardless of the formality of dress, but single-breasted ones are more common. In a three piece suit, th', 'XXXL');
 
@@ -164,7 +189,7 @@ CREATE TABLE `tbl_supplier` (
 --
 
 INSERT INTO `tbl_supplier` (`sup_id`, `sup_name`, `sup_address`, `sup_bank`, `sup_tax_code`) VALUES
-(14, 'Viettien', 'VN', 1231231, 123123),
+(14, 'Viettienn', 'VN', 1231231, 123123),
 (16, 'Homes', 'US', 1231231, 123123);
 
 -- --------------------------------------------------------
@@ -254,37 +279,37 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
 
 --
 -- AUTO_INCREMENT for table `tbl_catalog`
 --
 ALTER TABLE `tbl_catalog`
-  MODIFY `id_catalog_k` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id_catalog_k` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `tbl_client`
 --
 ALTER TABLE `tbl_client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id_product` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id_product` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `tbl_supplier`
 --
 ALTER TABLE `tbl_supplier`
-  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

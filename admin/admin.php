@@ -94,59 +94,60 @@
                     break;
             }
           // delete client
-          case 'del_client':
-          {
+          // case 'del_client':
+          // {
 
-              if(isset($_GET['id']))
-              {
-                $id=$_GET['id'];
-                // delete_client($id);
-                echo '<script>
-                  if (confirm("Do you want to delete client?")) {
-                      window.location.href = "admin.php?act=delete_client_sc&id=' . $id . '";
-                  } else {
-                      window.location.href = "admin.php?act=delete_client_fl";
-                  }
-                </script>';
-              } else {
-                $kq = getall_client();
-                include ("client.php");
-                echo '<script>
-                    alert("Delete client failure!");
-                </script>';
-              }
-              break;
-          }
-          case 'delete_client_fl':
-            {
-              $kq = getall_client();
-              include ("client.php");
-              echo '<script>
-                    alert("Cancelled!");
-                </script>';
-              break;
-            }
-            case 'delete_client_sc':
-            {
-              if(isset($_GET['id']) && ($_GET['id'] != ""))
-              {
-                $id = $_GET['id'];
-                delete_client($id);
-                $kq = getall_client();
-                include ("client.php");
-                echo '<script>
-                    alert("Delete client Sucessed!");
-                </script>';
-              }
-              else{
-                $kq = getall_client();
-                include ("client.php");
-                echo '<script>
-                    alert("Delete client Failure!");
-                </script>';
-              }
-              break;
-            }
+          //     if(isset($_GET['id']))
+          //     {
+          //       $id=$_GET['id'];
+          //       echo '<script>
+          //         if (confirm("Do you want to delete client?")) {
+          //             window.location.href = "admin.php?act=delete_client_sc&id=' . $id . '";
+          //         } else {
+          //             window.location.href = "admin.php?act=delete_client_fl";
+          //         }
+          //       </script>';
+          //     } else {
+          //       $kq = getall_client();
+          //       include ("client.php");
+          //       echo '<script>
+          //           alert("Delete client failure!");
+          //       </script>';
+          //     }
+          //     break;
+          // }
+          // case 'delete_client_fl':
+          //   {
+          //     $kq = getall_client();
+          //     include ("client.php");
+          //     echo '<script>
+          //           alert("Cancelled!");
+          //       </script>';
+          //     break;
+          //   }
+          //   case 'delete_client_sc':
+          //   {
+          //     if(isset($_GET['id']) && ($_GET['id'] != ""))
+          //     {
+          //       $id = $_GET['id'];
+          //       delete_client($id);
+          //       $kq = getall_client();
+          //       include ("client.php");
+          //       echo '<script>
+          //           alert("Delete client Sucessed!");
+          //       </script>';
+          //     }
+          //     else{
+          //       $kq = getall_client();
+          //       include ("client.php");
+          //       echo '<script>
+          //           alert("Delete client Failure!");
+          //       </script>';
+          //     }
+          //     break;
+          //   }
+          
+          
               
             // Update client
             case 'updateform_client':
@@ -167,8 +168,9 @@
                   $email=$_POST['email_c'];
                   $phone=$_POST['phone_c'];
                   $user=$_POST["user_c"];
+                  $ban=$_POST["ban_c"];
                   $password=$_POST['password_c'];
-                  update_client($id,$lname,$fname,$sex,$email,$phone,$user,$password,$address);
+                  update_client($id,$lname,$fname,$sex,$email,$phone,$user,$password,$address,$ban);
                   $kq = getall_client();
                   include ("client.php");
                   echo '<script type="text/javascript">';
@@ -202,13 +204,33 @@
                     $address=$_POST['supplier_address'];
                     $bank=$_POST['supplier_bank'];
                     $tax=$_POST['supplier_tax'];
-                    update_supplier($id,$name,$address,$bank,$tax);
-                    $kq = getall_supplier();
-                    include ("supplier.php");
-                    echo '<script type="text/javascript">';
-                    echo "alert('Update Supplier Successed!');";
-                    echo '</script>';
+                    $check = false;
+                    $sup_cur = getall_supplier();
+                    foreach($sup_cur as $sup)
+                    {
+                      if(strtolower($name) == strtolower($sup['sup_name']))
+                      {
+                        $check = true;
+                      }
+                    }
+                    if($check == true)
+                    {
+                      $kq = getall_supplier();
+                      include ("supplier.php");
+                      echo '<script type="text/javascript">';
+                      echo "alert('Update supplier failure because supplier exist!');";
+                      echo '</script>';
                     break;
+                    } elseif($check == false)
+                    {
+                      update_supplier($id,$name,$address,$bank,$tax);
+                      $kq = getall_supplier();
+                      include ("supplier.php");
+                      echo '<script type="text/javascript">';
+                      echo "alert('Update Supplier Successed!');";
+                      echo '</script>';
+                      break;
+                    }
                   }
                   break;
                 }
@@ -309,11 +331,19 @@
                                 {
                                     $check=true;
                                 }
+                                $sup_cur=getall_supplier();
+                                foreach($sup_cur as  $sup)
+                                {
+                                  if(strtolower($sup['sup_name'])==strtolower($name))
+                                  {
+                                    $check = true;
+                                  }
+                                }
                                 if($check){
                                   $kq = getall_supplier();
                                   include ("supplier.php");
                                   echo '<script type="text/javascript">';
-                                  echo "alert('Do not insert supplier because you missing product');";
+                                  echo "alert('Do not insert supplier because you missing product or supplier exist');";
                                   echo '</script>';
                                   break;
                                 }
@@ -390,11 +420,19 @@
                       {
                           $check=true;
                       }
-                      if($check){
+                      $cata_cur = getall_catalog();
+                      foreach($cata_cur as $cata)
+                      {
+                        if(strtolower($cata['catalog_name'])==strtolower($name))
+                        {
+                          $check = true;
+                        }
+                      }
+                      if($check==true){
                         $kq = getall_catalog();
                         include ("catalog.php");
                         echo '<script type="text/javascript">';
-                        echo "alert('Do not insert catalog because your are missing information');";
+                        echo "alert('Do not insert catalog because your are missing information or catalog exist');";
                         echo '</script>';
                       }
                       else{   
@@ -503,12 +541,33 @@
               {
                 $id=$_POST['id'];
                 $name=$_POST['catalog_name'];
-                update_catalog($id,$name);
-                $kq = getall_catalog();
-                include ("catalog.php");
-                echo '<script>
-                alert("Update Catalog Successed!");
-                </script>';
+                $check = false;
+                $cata_cur = getall_catalog();
+                foreach($cata_cur as $cata)
+                {
+                  if(strtolower($name) == strtolower($cata['catalog_name']))
+                  {
+                    $check = true;
+                  }
+                }
+                if($check == true)
+                {
+                  $kq = getall_catalog();
+                  include ("catalog.php");
+                  echo '<script>
+                  alert("Update catalog failure because exist catalog!");
+                  </script>';
+                  break;
+                } elseif($check == false)
+                {
+                  update_catalog($id,$name);
+                  $kq = getall_catalog();
+                  include ("catalog.php");
+                  echo '<script>
+                  alert("Update Catalog Successed!");
+                  </script>';
+                  break;
+                }
               }
               break;
             }
