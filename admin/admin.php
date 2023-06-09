@@ -583,7 +583,7 @@
                           $kq = getall_product();
                           include("product.php");
                           echo '<script>
-                          alert("Insert Product Failure!");
+                          alert("Insert product failure because missing information or not image!");
                           </script>';
                       }
                   }
@@ -594,6 +594,17 @@
               {
                 if(isset($_GET['id']))
                 {
+                  $cart =getall_cart_id();
+                  $flag =false;
+                  foreach($cart as $c)
+                  {
+                    if($_GET['id']==$c)
+                    {
+                      $flag=true;
+                    }
+                  }
+                  if($flag == false)
+                  {
                     $id=$_GET['id'];
                     // delete_product($id);
                     echo '<script>
@@ -603,6 +614,17 @@
                         window.location.href = "admin.php?act=delete_product_fl";
                     }
                     </script>';
+                  } else {
+                    $dmsp = getall_catalog();
+                    $dmee = getall_user();
+                    $dmsup = getall_supplier();
+                    $kq = getall_product();
+                    include ("product.php");
+                    echo '<script>
+                    alert("Delete product failure because product is being stored in the order!");
+                    </script>';
+                  }
+
                 }
                 else {
                   $dmsp = getall_catalog();
@@ -611,7 +633,7 @@
                   $kq = getall_product();
                   include ("product.php");
                   echo '<script>
-                  alert("Delete product failure!");
+                  alert("Delete product failure because id does not exist!");
                   </script>';
                 }
                 break;
@@ -780,4 +802,4 @@
       header('location: login.php');
 
     }
-?>   
+?>

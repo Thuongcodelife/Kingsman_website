@@ -42,6 +42,15 @@ function get_product_by_name_and_size($name_pd, $size_pd)
   return $kq;
 }
 
+function getall_cart_id(){
+  $conn=connectdb();
+  $stmt = $conn->prepare("SELECT * FROM tbl_cart");
+  $stmt->execute();
+  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+  $kq=$stmt->fetchAll();
+  return $kq;
+}
+
 function update_product_quantity($id, $new_quantity){
   $conn=connectdb();
   $sql = "UPDATE tbl_product SET quantity='$new_quantity' WHERE id_product=".$id;
