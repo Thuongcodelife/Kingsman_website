@@ -129,7 +129,7 @@ if (isset($_GET['act'])) {
           $detail_product = get_detail_product($id);
           include('detail_product.php');
         } else {
-          include(index.php);
+          include("index.php");
         }
         break;
       }
