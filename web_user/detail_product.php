@@ -1,10 +1,10 @@
   <!-- Start Shop Area  -->
-<style>
-  .active {
+  <style>
+.active {
     background-color: green;
-  }
-</style>
-  
+}
+  </style>
+
   <?php
     // var_dump($detail_product);
     $i = 0;
@@ -24,18 +24,8 @@
                                                 </a>
                                             </div>
                                             <div class="thumbnail">
-                                                <a href="../uploads/'.$detail_product[0]["product_img"].'" class="popup-zoom">
-                                                    <img class="custom_img_detail" src="../uploads/'.$detail_product[0]["product_img"].'" alt="Product Images">
-                                                </a>
-                                            </div>
-                                            <div class="thumbnail">
-                                                <a href="../uploads/'.$detail_product[0]["product_img"].'" class="popup-zoom">
-                                                    <img class="custom_img_detail" src="../uploads/'.$detail_product[0]["product_img"].'" alt="Product Images">
-                                                </a>
-                                            </div>
-                                            <div class="thumbnail">
-                                                <a href="../uploads/'.$detail_product[0]["product_img"].'" class="popup-zoom">
-                                                    <img class="custom_img_detail" src="../uploads/'.$detail_product[0]["product_img"].'" alt="Product Images">
+                                                <a href="../uploads/size.png" class="popup-zoom">
+                                                    <img class="custom_img_detail" src="../uploads/size.png" alt="Product Images">
                                                 </a>
                                             </div>
                                         </div>
@@ -53,13 +43,7 @@
                                             <img src="../uploads/'.$detail_product[0]["product_img"].'" alt="thumb image">
                                         </div>
                                         <div class="small-thumb-img">
-                                            <img src="../uploads/'.$detail_product[0]["product_img"].'" alt="thumb image">
-                                        </div>
-                                        <div class="small-thumb-img">
-                                            <img src="../uploads/'.$detail_product[0]["product_img"].'" alt="thumb image">
-                                        </div>
-                                        <div class="small-thumb-img">
-                                            <img src="../uploads/'.$detail_product[0]["product_img"].'" alt="thumb image">
+                                            <img src="../uploads/size.png" alt="thumb image">
                                         </div>
                                     </div>
                                 </div>
@@ -163,12 +147,11 @@
 ?>
 
 
-<script>
-    function submitForm(formIndex) 
-    {
-        var form = document.getElementById('slider_product_' + formIndex);
-        form.submit();
-    }
+  <script>
+function submitForm(formIndex) {
+    var form = document.getElementById('slider_product_' + formIndex);
+    form.submit();
+}
 
 //     function highlightSize(element) {
 //   // Xóa class 'highlighted' từ tất cả các phần tử
@@ -180,34 +163,34 @@
 //     // Thêm class 'highlighted' vào phần tử được click
 //     element.classList.add('highlighted');
 //     }
-</script>
+  </script>
 
-<script>
-  function limitInput(input) {
+  <script>
+function limitInput(input) {
     var min = parseInt(input.getAttribute("min"));
     var max = parseInt(input.getAttribute("max"));
 
     if (parseInt(input.value) < min) {
-      input.value = min;
+        input.value = min;
     } else if (parseInt(input.value) > max) {
-      input.value = max;
+        input.value = max;
     }
-  }
-</script>
+}
+  </script>
 
-<script>
-  function highlightSize(element) {
+  <script>
+function highlightSize(element) {
     var sizeItems = document.getElementsByTagName("li");
 
     // Xóa lớp "active" cho tất cả các phần tử <li>
     for (var i = 0; i < sizeItems.length; i++) {
-      sizeItems[i].classList.remove("active");
+        sizeItems[i].classList.remove("active");
     }
 
     // Thêm lớp "active" cho phần tử được nhấp
     element.classList.add("active");
-  }
-</script>
+}
+  </script>
 
 
-            <!-- End .single-product-thumb -->
+  <!-- End .single-product-thumb -->
