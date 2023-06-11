@@ -51,7 +51,7 @@
 </div>
 
 <footer class="axil-footer-area footer-style-1 footer-light">
-  <!-- Start Footer Top Area  -->
+    <!-- Start Footer Top Area  -->
     <!-- Start Footer Area  -->
     <footer class="axil-footer-area footer-style-2">
         <!-- Start Footer Top Area  -->
@@ -69,12 +69,14 @@
                         </div> -->
                             <div class="inner">
                                 <p>Hang Thuyen Street, <br>
-                                neighborhood 6 P, Thu Duc City - HCM, <br>
-                                Viet Nam.
+                                    neighborhood 6 P, Thu Duc City - HCM, <br>
+                                    Viet Nam.
                                 </p>
                                 <ul class="support-list-item">
-                                    <li><a href="20522000@gm.uit.edu.vn"><i class="fal fa-envelope-open"></i>20522000@gm.uit.edu.vn</a></li>
-                                    <li><a href="tel:(+84)32888525"><i class="fal fa-phone-alt"></i> (+84)342-888-525</a></li>
+                                    <li><a href="20522000@gm.uit.edu.vn"><i
+                                                class="fal fa-envelope-open"></i>20522000@gm.uit.edu.vn</a></li>
+                                    <li><a href="tel:(+84)32888525"><i class="fal fa-phone-alt"></i>
+                                            (+84)342-888-525</a></li>
                                     <!-- <li><i class="fal fa-map-marker-alt"></i> 685 Market Street,  <br> Las Vegas, LA 95820, <br> United States.</li> -->
                                 </ul>
                             </div>
@@ -87,11 +89,10 @@
                             <h5 class="widget-title">Account</h5>
                             <div class="inner">
                                 <ul>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="sign-up.html">Login / Register</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Login / Register</a></li>
+                                    <li><a href="#">Cart</a></li>
+                                    <li><a href="#">Shop</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -103,11 +104,10 @@
                             <h5 class="widget-title">Quick Link</h5>
                             <div class="inner">
                                 <ul>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="terms-of-service.html">Terms Of Use</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms Of Use</a></li>
                                     <li><a href="#">FAQ</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -153,7 +153,8 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-12">
-                        <div class="copyright-right d-flex flex-wrap justify-content-xl-end justify-content-center align-items-center">
+                        <div
+                            class="copyright-right d-flex flex-wrap justify-content-xl-end justify-content-center align-items-center">
                             <span class="card-text">Accept For</span>
                             <ul class="payment-icons-bottom quick-link">
                                 <li><img src="../assets//images/icons/cart/cart-1.png" alt="paypal cart"></li>
