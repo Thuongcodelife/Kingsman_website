@@ -269,8 +269,8 @@ if (isset($_GET['act'])) {
             foreach ($account as $us) {
               if ($us["user"] == $userr) {
                 $txt_erro = "User exists, please enter another user!";
-                // header('location: register.php?act=sameus');
-                echo "<script>alert('Your message Here');</script>";
+                header('location: register.php?act=sameus');
+                // echo "<script>alert('User exists, please enter another user!');</script>";
                 $check = 2;
                 break;
               }

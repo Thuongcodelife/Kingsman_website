@@ -79,7 +79,7 @@ include 'head.php';
             ?>
             <br><br>
             <div class="form-group">
-                <input type="submit" class="form-control" name="submit">
+                <input type="submit" class="form-control" name="submit" value="Sign up">
             </div>
 
         </form>
