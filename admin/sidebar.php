@@ -27,7 +27,7 @@
                 </div>
             </div>
             <!-- Begin Simple Accordion -->
-            <div class="ui accordion simpleaccordion item">
+            <!-- <div class="ui accordion simpleaccordion item">
                 <div class="title titleaccordion item"><i class="dropdown icon"></i> Settings</div>
                 <div class="content contentaccordion">
                     <a class="item itemaccordion" href="admin.php?act=Account_Setting"><i class=" settings icon"></i>
@@ -36,7 +36,7 @@
                     <a class="item itemaccordion" href="#"><i class="settings icon"></i> Site
                         Setting</a>
                 </div>
-            </div>
+            </div> -->
             <!-- End Simple Accordion -->
             <a href="admin.php?act=logout" class="item"><i class="sign out alternate icon"></i>
                 Logout</a>

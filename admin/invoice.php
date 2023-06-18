@@ -1,35 +1,36 @@
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
-  <div class="ui container grid">
-    <div class="row">
-      <div class="fifteen wide computer sixteen wide phone centered column center-table">
-        <div class="ui divider"></div>
-        <div class="ui grid">
-          <div class="sixteen wide computer sixteen wide phone centered column">
-            <!-- BEGIN DATATABLE -->
-            <div class="ui stacked segment">
-              <div class="ui blue ribbon icon label">Invoice Information</div>
-              <br><br>
-              <table id="example" class="ui celled table responsive nowrap unstackable" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>Number</th>
-                    <th>ID</th>
-                    <!-- <th>ID Invoice</th> -->
-                    <th>User_ID</th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <!-- <th>Email</th> -->
-                    <th>Address</th>
-                    <th>Total Prices</th>
-                    <th>Payment</th>
-                    <th>Status</th>
-                    <th>Staff</th>
-                    <th>Order_Day</th>
-                    <th>Function</th>
-                    <!-- <th>E-mail</th> -->
-                  </tr>
-                </thead>
-                <?php
+    <div class="ui container grid">
+        <div class="row">
+            <div class="fifteen wide computer sixteen wide phone centered column center-table">
+                <div class="ui divider"></div>
+                <div class="ui grid">
+                    <div class="sixteen wide computer sixteen wide phone centered column">
+                        <!-- BEGIN DATATABLE -->
+                        <div class="ui stacked segment">
+                            <div class="ui blue ribbon icon label">Invoice Information</div>
+                            <br><br>
+                            <table id="example" class="ui celled table responsive nowrap unstackable"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Number</th>
+                                        <th>ID</th>
+                                        <!-- <th>ID Invoice</th> -->
+                                        <th>User_ID</th>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <!-- <th>Email</th> -->
+                                        <th>Address</th>
+                                        <th>Total Prices</th>
+                                        <th>Payment</th>
+                                        <th>Status</th>
+                                        <th>Staff</th>
+                                        <th>Order_Day</th>
+                                        <th>Function</th>
+                                        <!-- <th>E-mail</th> -->
+                                    </tr>
+                                </thead>
+                                <?php
                   // var_dump($dmsp);
                   if (isset($kq) && (count($kq) > 0)) {
                     $i = 1;
@@ -83,7 +84,16 @@
                             <button  class="button-detail"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Details</a></button> 
                           </td>
                         </tr>';
-                        } else {
+                        } 
+                        // elseif($invoice['status'] == "Ordered")
+                        // {
+                        //   echo'<td>
+                        //   <button  class="button-detail"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Details</a></button> 
+                        //   <button  class="button-print"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Print</a></button> 
+                        //   </td>
+                        // </tr>';
+                        // }
+                        else {
                           echo'
                           <td>
                             <button  class="button-update"><a class="change-a" href="admin.php?act=updateform_invoice&id='.$invoice['id'].'">Update</a></button>
@@ -96,17 +106,17 @@
                     }
                   }
                 ?>
-              </table>
-              <div>
-                  <!-- <button  class="button-insert"><a class="change-a" href="admin.php?act=insert_client&id='1'">Insert</a></button> -->
-              </div>
+                            </table>
+                            <div>
+                                <!-- <button  class="button-insert"><a class="change-a" href="admin.php?act=insert_client&id='1'">Insert</a></button> -->
+                            </div>
+                        </div>
+                        <!-- END DATATABLE -->
+                    </div>
+                </div>
             </div>
-            <!-- END DATATABLE -->
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 <!-- END CONTENT -->
 </div>
@@ -135,12 +145,12 @@
 <script>
 $(document).ready(function() {
 
-  $(document).ready(function() {
-    $('#example').DataTable();
-  });
-  table.buttons().container().appendTo(
-    $('div.eight.column:eq(0)', table.table().container())
-  );
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+    table.buttons().container().appendTo(
+        $('div.eight.column:eq(0)', table.table().container())
+    );
 });
 </script>
 
