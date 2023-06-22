@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-8">
                     <div class="inner">
-                        <ul class="axil-breadcrumb">
+                        <!-- <ul class="axil-breadcrumb">
                             <li class="axil-breadcrumb-item"><a href="index.php?act=homepage_login_successed">Home</a>
                             </li>
                             <li class="separator"></li>
                             <li class="axil-breadcrumb-item active" aria-current="page">My Account</li>
-                        </ul>
+                        </ul> -->
                         <h1 class="title-kid">Account Information</h1>
                     </div>
                 </div>

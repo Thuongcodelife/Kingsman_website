@@ -9,7 +9,7 @@ function getall_product(){
 }
 function search_product($query){
     $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM tbl_product WHERE product_name LIKE '%$query%'");
+    $stmt = $conn->prepare("SELECT * FROM tbl_product WHERE product_name LIKE '%$query%' OR description LIKE '%$query%' ");
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $kq=$stmt->fetchAll();
