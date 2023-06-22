@@ -36,11 +36,8 @@
 
                                     <!-- Start Single Select  -->
                                     <select class="single-select">
-                                        <option>Categories</option>
-                                        <option>Fashion</option>
-                                        <option>Electronics</option>
-                                        <option>Furniture</option>
-                                        <option>Beauty</option>
+                                        <option>Type</option>
+                                        <option>Vest</option>
                                     </select>
                                     <!-- End Single Select  -->
 
@@ -57,10 +54,7 @@
                                     <!-- Start Single Select  -->
                                     <select class="single-select">
                                         <option>Price Range</option>
-                                        <option>0 - 100</option>
-                                        <option>100 - 500</option>
-                                        <option>500 - 1000</option>
-                                        <option>1000 - 1500</option>
+                                        <option>10000 - 20000</option>
                                     </select>
                                     <!-- End Single Select  -->
 
@@ -73,7 +67,6 @@
                                         <option>Sort by Latest</option>
                                         <option>Sort by Name</option>
                                         <option>Sort by Price</option>
-                                        <option>Sort by Viewed</option>
                                     </select>
                                     <!-- End Single Select  -->
                                 </div>

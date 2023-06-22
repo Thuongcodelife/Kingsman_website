@@ -1,32 +1,33 @@
 <div class="right floated thirteen wide computer sixteen wide phone column" id="content">
-  <div class="ui container grid">
-    <div class="row">
-      <div class="fifteen wide computer sixteen wide phone centered column center-table">
-        <div class="ui divider"></div>
-        <div class="ui grid">
-          <div class="sixteen wide computer sixteen wide phone centered column">
-            <!-- BEGIN DATATABLE -->
-            <div class="ui stacked segment">
-              <div class="ui blue ribbon icon label">Client Information</div>
-              <br><br>
-              <table id="example" class="ui celled table responsive nowrap unstackable" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>Number</th>
-                    <th>ID</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Sex</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Function</th>
-                    <!-- <th>Password</th>
+    <div class="ui container grid">
+        <div class="row">
+            <div class="fifteen wide computer sixteen wide phone centered column center-table">
+                <div class="ui divider"></div>
+                <div class="ui grid">
+                    <div class="sixteen wide computer sixteen wide phone centered column">
+                        <!-- BEGIN DATATABLE -->
+                        <div class="ui stacked segment">
+                            <div class="ui blue ribbon icon label">Client Information</div>
+                            <br><br>
+                            <table id="example" class="ui celled table responsive nowrap unstackable"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Number</th>
+                                        <th>ID</th>
+                                        <th>Last Name</th>
+                                        <th>First Name</th>
+                                        <th>Sex</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Function</th>
+                                        <!-- <th>Password</th>
                     <th>Function</th> -->
-                    <!-- <th>E-mail</th> -->
-                  </tr>
-                </thead>
-                <?php
+                                        <!-- <th>E-mail</th> -->
+                                    </tr>
+                                </thead>
+                                <?php
                   // var_dump($dmsp);
                   if (isset($kq) && (count($kq) > 0)) {
                     $i = 1;
@@ -63,7 +64,6 @@
                           
                           <td>
                             <button  class="button-update"><a class="change-a" href="admin.php?act=updateform_client&id='.$client['id'].'">Update</a></button>
-                            <button  class="button-delete"><a class="change-a" href="admin.php?act=del_client&id='.$client['id'].'">Delete</a></button> 
                           </td>
                         </tr>';
                       $i++;
@@ -71,17 +71,20 @@
                   }
                 ?>
 
-              </table>
-              <div>
-                  <!-- <button  class="button-insert"><a class="change-a" href="admin.php?act=insert_client&id='1'">Insert</a></button> -->
-              </div>
+                            </table>
+                            <div>
+                                <!-- <button class="button-delete"><a class="change-a"
+                                        href="admin.php?act=del_client&id='.$client['id'].'">Delete</a></button> -->
+
+                                <!-- <button  class="button-insert"><a class="change-a" href="admin.php?act=insert_client&id='1'">Insert</a></button> -->
+                            </div>
+                        </div>
+                        <!-- END DATATABLE -->
+                    </div>
+                </div>
             </div>
-            <!-- END DATATABLE -->
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 <!-- END CONTENT -->
 </div>
@@ -110,12 +113,12 @@
 <script>
 $(document).ready(function() {
 
-  $(document).ready(function() {
-    $('#example').DataTable();
-  });
-  table.buttons().container().appendTo(
-    $('div.eight.column:eq(0)', table.table().container())
-  );
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+    table.buttons().container().appendTo(
+        $('div.eight.column:eq(0)', table.table().container())
+    );
 });
 </script>
 

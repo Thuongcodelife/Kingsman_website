@@ -7,6 +7,14 @@ function getall_product(){
     $kq=$stmt->fetchAll();
     return $kq;
 }
+function search_product($query){
+    $conn=connectdb();
+    $stmt = $conn->prepare("SELECT * FROM tbl_product WHERE product_name LIKE '%$query%'");
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $kq=$stmt->fetchAll();
+    return $kq;
+}
 
 function update_quantity_product($id,$quantity){
     $conn=connectdb();

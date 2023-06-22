@@ -541,11 +541,12 @@
               {
                 $id=$_POST['id'];
                 $name=$_POST['catalog_name'];
+                $display=$_POST['display_ctl'];
                 $check = false;
                 $cata_cur = getall_catalog();
                 foreach($cata_cur as $cata)
                 {
-                  if(strtolower($name) == strtolower($cata['catalog_name']))
+                  if((strtolower($name) == strtolower($cata['catalog_name']))&&($cata['display_ctl']==$display))
                   {
                     $check = true;
                   }
@@ -560,7 +561,7 @@
                   break;
                 } elseif($check == false)
                 {
-                  update_catalog($id,$name);
+                  update_catalog($id,$name,$display);
                   $kq = getall_catalog();
                   include ("catalog.php");
                   echo '<script>

@@ -1,7 +1,7 @@
 <?php
     function getall_invoice(){
         $conn=connectdb();
-        $stmt = $conn->prepare("SELECT * FROM tbl_order");
+        $stmt = $conn->prepare("SELECT * FROM tbl_order ORDER BY due_date DESC");
         $stmt->execute();
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $kq=$stmt->fetchAll();

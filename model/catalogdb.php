@@ -24,9 +24,9 @@ function getoneCatalog($id)
   return $kq;
 }
 
-function update_catalog($id,$name){
+function update_catalog($id,$name,$display){
   $conn=connectdb();
-  $sql = "UPDATE tbl_catalog SET catalog_name='".$name."' WHERE id_catalog_k=".$id;
+  $sql = "UPDATE tbl_catalog SET catalog_name='".$name."', display_ctl='".$display."' WHERE id_catalog_k=".$id;
   $stmt = $conn->prepare($sql);
   $stmt->execute();
 }
@@ -36,4 +36,4 @@ function insert_catalog($name,$prioritize,$display){
   $sql = "INSERT INTO tbl_catalog (catalog_name,prioritize,display_ctl) VALUES ('$name','$prioritize','$display')";
   $conn->exec($sql);
 }
-?>  
+?>

@@ -1,32 +1,32 @@
 <main class="main-wrapper">
 
-<!-- Start Cart Area  -->
-<div class="axil-product-cart-area axil-section-gap">
-    <div class="container">
-        <div class="axil-product-cart-wrap">
-            <div class="product-table-heading">
-                <h4 class="title">Your Cart</h4>
-                <a href="index.php?act=clear_cart" class="cart-clear">Clear Shoping Cart</a>
-            </div>
-            <div class="table-responsive">
-                <table class="table axil-product-table axil-cart-table mb--40">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="product-remove"></th>
-                            <th scope="col" class="product-thumbnail">Product</th>
-                            <th scope="col" class="product-title">Name</th>
-                            <th scope="col" class="product-size">Size</th>
-                            <th scope="col" class="product-price">Price</th>
-                            <th   scope="col" class="product-quantity">Quantity</th>
-                            <th scope="col" class="product-subtotal">Subtotal</th>
-                        </tr>
-                    </thead>
+    <!-- Start Cart Area  -->
+    <div class="axil-product-cart-area axil-section-gap">
+        <div class="container">
+            <div class="axil-product-cart-wrap">
+                <div class="product-table-heading">
+                    <h4 class="title">Your Cart</h4>
+                    <a href="index.php?act=clear_cart" class="cart-clear">Clear Shoping Cart</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table axil-product-table axil-cart-table mb--40">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="product-remove"></th>
+                                <th scope="col" class="product-thumbnail">Product</th>
+                                <th scope="col" class="product-title">Name</th>
+                                <th scope="col" class="product-size">Size</th>
+                                <th scope="col" class="product-price">Price</th>
+                                <th scope="col" class="product-quantity">Quantity</th>
+                                <th scope="col" class="product-subtotal">Subtotal</th>
+                            </tr>
+                        </thead>
                         <!-- <input type="number" class="quantity-input" value="'.$item[4].'">
                         <div class="pro-qty">
                         <input type="number" class="quantity-input" value="'.$item[4].'">
                         </div> -->
-                    <tbody>
-                        <?php
+                        <tbody>
+                            <?php
                             // unset($_SESSION['cart']);
                             $total_final = 0;
                             $tax = 0;
@@ -83,6 +83,8 @@
                                                                     <td>
                                                                         <div class="input-group">
                                                                             <input type="radio" id="radio1" name="shipping" checked>
+                                                                            <br>
+                                                                            <br>
                                                                             <label for="radio1">Free Shippping</label>
                                                                         </div>
                                                                         <div class="input-group">
@@ -136,14 +138,13 @@
                             ';
                             }
                         ?>
-                        <script>
-                            function submitForm(formIndex) 
-                            {
+                            <script>
+                            function submitForm(formIndex) {
                                 var form = document.getElementById('check_cart_product_' + formIndex);
                                 form.submit();
                             }
-                        </script>
+                            </script>
 
-<!-- End Cart Area  -->
+                            <!-- End Cart Area  -->
 
 </main>

@@ -1,7 +1,7 @@
 <?php
     function getall_order(){
         $conn=connectdb();
-        $stmt = $conn->prepare("SELECT * FROM tbl_order");
+        $stmt = $conn->prepare("SELECT * FROM tbl_order  ORDER BY due_date DESC");
         $stmt->execute();
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $kq=$stmt->fetchAll();
@@ -9,7 +9,7 @@
     }
     function getall_order_id($id){
         $conn=connectdb();
-        $stmt = $conn->prepare("SELECT * FROM tbl_order WHERE id = $id");
+        $stmt = $conn->prepare("SELECT * FROM tbl_order WHERE id = $id ORDER BY due_date DESC");
         $stmt->execute();
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $kq=$stmt->fetchAll();

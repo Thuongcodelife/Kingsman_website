@@ -1,85 +1,88 @@
 <script>
-  // Lắng nghe sự kiện click trên các liên kết tab
-  document.addEventListener('DOMContentLoaded', function() {
+// Lắng nghe sự kiện click trên các liên kết tab
+document.addEventListener('DOMContentLoaded', function() {
     var tabLinks = document.querySelectorAll('.nav-link');
     tabLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
 
-        var target = this.getAttribute('href'); // Lấy đích đến của tab
+            var target = this.getAttribute('href'); // Lấy đích đến của tab
 
-        // Ẩn tất cả các tab pane
-        var tabPanes = document.querySelectorAll('.tab-pane');
-        tabPanes.forEach(function(pane) {
-          pane.classList.remove('show', 'active');
+            // Ẩn tất cả các tab pane
+            var tabPanes = document.querySelectorAll('.tab-pane');
+            tabPanes.forEach(function(pane) {
+                pane.classList.remove('show', 'active');
+            });
+
+            // Hiển thị tab pane tương ứng với tab được nhấp
+            var activePane = document.querySelector(target);
+            activePane.classList.add('show', 'active');
         });
-
-        // Hiển thị tab pane tương ứng với tab được nhấp
-        var activePane = document.querySelector(target);
-        activePane.classList.add('show', 'active');
-      });
     });
-  });
+});
 </script>
 <main class="main-wrapper">
-        <!-- Start Breadcrumb Area  -->
-        <div class="axil-breadcrumb-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="inner">
-                            <ul class="axil-breadcrumb">
-                                <li class="axil-breadcrumb-item"><a href="index.php?act=homepage_login_successed">Home</a></li>
-                                <li class="separator"></li>
-                                <li class="axil-breadcrumb-item active" aria-current="page">My Account</li>
-                            </ul>
-                            <h1 class="title-kid">Account Information</h1>
-                        </div>
+    <!-- Start Breadcrumb Area  -->
+    <div class="axil-breadcrumb-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="inner">
+                        <ul class="axil-breadcrumb">
+                            <li class="axil-breadcrumb-item"><a href="index.php?act=homepage_login_successed">Home</a>
+                            </li>
+                            <li class="separator"></li>
+                            <li class="axil-breadcrumb-item active" aria-current="page">My Account</li>
+                        </ul>
+                        <h1 class="title-kid">Account Information</h1>
                     </div>
-                    <div class="col-lg-6 col-md-4">
-                        <div class="inner">
-                            <div class="bradcrumb-thumb">
-                                <img style="height: 150px; width: 150px;" src="../assets/images/logo/logo.png" alt="Image">
-                            </div>
+                </div>
+                <div class="col-lg-6 col-md-4">
+                    <div class="inner">
+                        <div class="bradcrumb-thumb">
+                            <img style="height: 150px; width: 150px;" src="../assets/images/logo/logo.png" alt="Image">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Breadcrumb Area  -->
+    </div>
+    <!-- End Breadcrumb Area  -->
 
-        <!-- Start My Account Area  -->
-        <div class="axil-dashboard-area axil-section-gap">
-            <div class="container">
-                <div class="axil-dashboard-warp">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-4">
-                            <aside class="axil-dashboard-aside">
-                                <nav class="axil-dashboard-nav">
-                                    <div class="nav nav-tabs" role="tablist">
-                                        <a class="nav-item nav-link   active" data-bs-toggle="tab" href="#nav-account" role="tab" aria-selected="false"><i class="fas fa-user"></i>Account Details</a>
-                                        <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-orders" role="tab" aria-selected="false"><i class="fas fa-shopping-basket"></i>Orders</a>
-                                    </div>
-                                </nav>
-                            </aside>
-                        </div>
-                        <div class="col-xl-9 col-md-8">
-                            <div class="tab-content">
-                                <div class="tab-pane fade " id="nav-orders" role="tabpanel">
-                                    <div class="axil-dashboard-order">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Order</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Total</th>
-                                                        <th scope="col">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
+    <!-- Start My Account Area  -->
+    <div class="axil-dashboard-area axil-section-gap">
+        <div class="container">
+            <div class="axil-dashboard-warp">
+                <div class="row">
+                    <div class="col-xl-3 col-md-4">
+                        <aside class="axil-dashboard-aside">
+                            <nav class="axil-dashboard-nav">
+                                <div class="nav nav-tabs" role="tablist">
+                                    <a class="nav-item nav-link   active" data-bs-toggle="tab" href="#nav-account"
+                                        role="tab" aria-selected="false"><i class="fas fa-user"></i>Account Details</a>
+                                    <a class="nav-item nav-link" data-bs-toggle="tab" href="#nav-orders" role="tab"
+                                        aria-selected="false"><i class="fas fa-shopping-basket"></i>Orders</a>
+                                </div>
+                            </nav>
+                        </aside>
+                    </div>
+                    <div class="col-xl-9 col-md-8">
+                        <div class="tab-content">
+                            <div class="tab-pane fade " id="nav-orders" role="tabpanel">
+                                <div class="axil-dashboard-order">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Order</th>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Total</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
                                                         foreach($order as $od)
                                                         {
                                                             $iduser_check=$_SESSION['iduser'];
@@ -109,19 +112,19 @@
                                                         }
                                                     
                                                     ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div>
-                                <div class="tab-pane fade  show active" id="nav-account" role="tabpanel">
-                                    <div class="col-lg-9">
-                                        <div class="axil-dashboard-account">
-                                            <form class="account-details-form">
-                                                <?php
+                        <div>
+                            <div class="tab-pane fade  show active" id="nav-account" role="tabpanel">
+                                <div class="col-lg-9">
+                                    <div class="axil-dashboard-account">
+                                        <form class="account-details-form">
+                                            <?php
                                                     $iduser=$_SESSION['iduser'];
                                                     foreach($client as $client)
                                                     {
@@ -132,13 +135,13 @@
                                                                 <div class="col-lg-6">
                                                                     <div class="form-group">
                                                                         <label>First Name</label>
-                                                                        <input type="text" class="form-control" value="'.$client['fname'].'">
+                                                                        <input  style="background-color: white;" type="text" readonly class="form-control" value="'.$client['fname'].'">
                                                                     </div>
                                                                 </div>
                                                             <div class="col-lg-6">
                                                                 <div class="form-group">
                                                                     <label>Last Name</label>
-                                                                    <input type="text" class="form-control" value="'.$client['lname'].'">
+                                                                    <input style="background-color: white;"type="text" readonly class="form-control" value="'.$client['lname'].'">
                                                                 </div>
                                                             </div>
                                                             </div>
@@ -179,8 +182,7 @@
                                                         }
                                                     }
                                                 ?>
-                                            </form>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -189,5 +191,6 @@
                 </div>
             </div>
         </div>
-        <!-- End My Account Area  -->
-    </main>
+    </div>
+    <!-- End My Account Area  -->
+</main>
