@@ -12,7 +12,19 @@
                             <div style="height: 325px; width: 325px;" class="thumbnail"><img
                                     src="../assets/images/team/team.png" alt="Cody Fisher"></div>
                             <div class="team-content">
-                                <span class="subtitle">Leader / Font-End / Back-End / Report</span>
+                                <span class="subtitle">Leader / Font-End / Back-End / Test / Report</span>
+                                <br>
+                                <span class="subtitle">ID: 20522134</span>
+                                <h5 class="title">Huynh Thị Bich Tuyen</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-single-layout">
+                        <div class="axil-team-member">
+                            <div style="height: 325px; width: 325px;" class="thumbnail"><img
+                                    src="../assets/images/team/team.png" alt="Cody Fisher"></div>
+                            <div class="team-content">
+                                <span class="subtitle">Font-End / Back-End / Report</span>
                                 <br>
                                 <span class="subtitle">ID: 20522000</span>
                                 <h5 class="title">Nguyen Nhat Thuong</h5>
@@ -24,7 +36,7 @@
                             <div style="height: 325px; width: 325px;" class="thumbnail"><img
                                     src="../assets/images/team/team.png" alt="Cody Fisher"></div>
                             <div class="team-content">
-                                <span class="subtitle">Font-End / Back-End</span>
+                                <span class="subtitle">Model / Diagram / Database</span>
                                 <br>
                                 <span class="subtitle">ID: 20521331</span>
                                 <h5 class="title">Nguyen Quang Hoa</h5>
@@ -36,7 +48,7 @@
                             <div style="height: 325px; width: 325px;" class="thumbnail"><img
                                     src="../assets/images/team/team.png" alt="Cody Fisher"></div>
                             <div class="team-content">
-                                <span class="subtitle">Figma / Report</span>
+                                <span class="subtitle">Figma / Report / Test</span>
                                 <br>
                                 <span class="subtitle">ID: 20521381</span>
                                 <h5 class="title">Kieu Xuan Dieu Huong</h5>
@@ -48,7 +60,7 @@
                             <div style="height: 325px; width: 325px;" class="thumbnail"><img
                                     src="../assets/images/team/team.png" alt="Cody Fisher"></div>
                             <div class="team-content">
-                                <span class="subtitle">Figma</span>
+                                <span class="subtitle">Figma / Report / Test</span>
                                 <br>
                                 <span class="subtitle">ID: 20521515</span>
                                 <h5 class="title">Nguyen Bao Lam</h5>
@@ -77,9 +89,6 @@
                             <li>Database: Mysqli</li>
                             <li>Design: <a
                                     href="https://www.figma.com/file/hP8yLSFgwHDQFOx6kgKqUI/Fashion-Web-UI%2FUX?type=design&node-id=0-1&t=afKDeAqzcMuokL51-0">Figma</a>
-                            </li>
-                            <li>Task management table: <a
-                                    href="https://trello.com/invite/b/1JxH6dTT/ATTIe34f268745834a8f77f264f9fd1db14fE4D60B1C/system-management-design">Trello</a>
                             </li>
                         </ul>
                         <h4 class="title">Welcome to our fashion e-commerce website!<h4>

@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                                                   echo '<td style="color: grey; font-weight: bold;">'.$od['status'].'</td>';
                                                                 } elseif ($od['status'] == "Cancel"){
                                                                   echo '<td style="color: red; font-weight: bold;">'.$od['status'].'</td>';
-                                                                } elseif ($od['status'] == "Ordered"){
+                                                                } elseif ($od['status'] == "Delivered"){
                                                                   echo '<td style="color: green; font-weight: bold;">'.$od['status'].'</td>';
                                                                 }
                                     

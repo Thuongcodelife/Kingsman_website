@@ -10,6 +10,7 @@ include "../model_user/catalogdb_user.php";
 include "../model_user/productdb_user.php";
 include "../model_user/clientdb_user.php";
 include "../model_user/invoicedb.php";
+include "../model_user/strdb_cart.php";
 include 'head.php';
 $product = getall_product_hot();
 $product_use = getall_product_view(0, 0);
@@ -32,11 +33,14 @@ if (isset($_GET['act'])) {
         if (isset($_SESSION['username'])) {
           unset($_SESSION['username']);
         }
+        if (isset($_SESSION['cart'])) {
+          // foreach ($_SESSION['cart'] as $key => $item) {
+          //   insert_strcart($_SESSION['iduser'], $item[0]);
+          // }
+          unset($_SESSION['cart']);
+        }
         if (isset($_SESSION['iduser'])) {
           unset($_SESSION['iduser']);
-        }
-        if (isset($_SESSION['cart'])) {
-          unset($_SESSION['cart']);
         }
         header('location: index.php?act=home');
         break;

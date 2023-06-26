@@ -616,6 +616,7 @@
                       if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
                           $uploadOk = 0;
                       }
+                      
                       if ($uploadOk == 1) {
                           move_uploaded_file($_FILES["img_product"]["tmp_name"], $target_file);
                           // Kiểm tra xem sản phẩm đã tồn tại trong cơ sở dữ liệu hay chưa
@@ -776,6 +777,7 @@
                       && $imageFileType != "gif" ) {
                         $uploadOk = 0;
                       }
+                     
                       move_uploaded_file($_FILES["img_product"]["tmp_name"], $target_file);
                       if($uploadOk==1)
                       {

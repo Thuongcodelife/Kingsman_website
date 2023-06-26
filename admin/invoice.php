@@ -58,7 +58,7 @@
                           echo '<td class="status-pending">'.$invoice['status'].'</td>';
                         } elseif ($invoice['status'] == "Cancel"){
                           echo '<td class="status-cancel">'.$invoice['status'].'</td>';
-                        } elseif ($invoice['status'] == "Ordered"){
+                        } elseif ($invoice['status'] == "Delivered"){
                           echo '<td class="status-ordered">'.$invoice['status'].'</td>';
                         };
                         $check_us = 0;
@@ -85,7 +85,7 @@
                           </td>
                         </tr>';
                         } 
-                        // elseif($invoice['status'] == "Ordered")
+                        // elseif($invoice['status'] == "Delivered")
                         // {
                         //   echo'<td>
                         //   <button  class="button-detail"><a class="change-a" href="../web_user/index.php?act=print_invoice_admin&iddh='.$invoice['id'].'">Details</a></button> 
